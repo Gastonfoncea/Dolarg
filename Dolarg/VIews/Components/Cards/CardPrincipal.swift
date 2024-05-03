@@ -9,12 +9,10 @@ import SwiftUI
 
 struct CardPrincipal: View {
     
-   // @StateObject var genFunc = GeneralFunctions()
+   @StateObject var genFunc = GeneralFunctions()
     var tipoDolar: String
-    var spread: Int
-    var actualizacion: String
-    var montoCompra: Decimal
-    var montoVenta: Decimal
+    var montoCompra: Any
+    var montoVenta: Any
     
     var body: some View {
         ZStack{
@@ -31,15 +29,15 @@ struct CardPrincipal: View {
                 
                 VStack(alignment: .leading,spacing: 10){
                     //dolar blue
-                    Text("Dolar \(tipoDolar.capitalized)")
+                    Text("\(tipoDolar.capitalized)")
                         .font(.headline)
                         .bold()
                         .foregroundStyle(Color.colorText1)
-                    Text("Spread $ \(montoVenta - montoCompra)")
+                    Text("Spread $ \(genFunc.AnyToInt(dato: montoVenta) - genFunc.AnyToInt(dato: montoCompra))")
                         .font(.footnote)
                         .foregroundStyle(Color.accentColor)
                         
-//                    Text(genFunc.formatedDate(date: actualizacion))
+//                    Text("03/05 - 17:11")
 //                        .font(.footnote)
                 }
                 Spacer()
@@ -49,7 +47,7 @@ struct CardPrincipal: View {
                     VStack(alignment:.leading,spacing: 10){
                       
                         
-                        Text("$ \(montoCompra)")
+                        Text("\(montoCompra)")
                             .font(.headline)
                             .fontWeight(.semibold)
                             .foregroundStyle(Color.colorText2)
@@ -63,7 +61,7 @@ struct CardPrincipal: View {
                     Spacer()
                     VStack(alignment:.leading, spacing:10){
                   
-                        Text("$ \(montoVenta)")
+                        Text("\(montoVenta)")
                             .font(.headline)
                             .fontWeight(.semibold)
                             .foregroundStyle(Color.colorText2)
@@ -89,5 +87,5 @@ struct CardPrincipal: View {
 }
 
 #Preview {
-    CardPrincipal(tipoDolar: "blue", spread: 20, actualizacion: "2024-03-28T10:54:00.000Z", montoCompra: 930, montoVenta: 940)
+    CardPrincipal(tipoDolar: "blue",montoCompra: 930, montoVenta: 940)
 }

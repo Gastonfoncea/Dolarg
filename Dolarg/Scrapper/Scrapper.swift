@@ -8,45 +8,56 @@
 import Foundation
 import SwiftSoup
 
-class Scrapper: ObservableObject {
+
+
+
+class Scrapper {
     
-    
+    static let shared = Scrapper()
     let baseUrl = "https://dolarhoy.com"
-    var array: [Any] = []
-    @Published var montoCompraBlue: Any = ""
-    @Published var montVentaBlue: Any = ""
+    @Published var array: [Any] = []
+
+  
     
     ///FUNCIONES
-    func scrappearDolar() {
+    func scrappearDolar(completed:@escaping(Result<DolarModel,NetworkErrors>)->Void ) {
         //URLSession par hacerlo de forma async
         guard let url = URL(string: baseUrl) else {
             print("Url invalida")
+            completed(.failure(.invalidResponse))
             return
         }
         
+        
         let session = URLSession.shared
         
-        let task = session.dataTask(with: url) { [self]data,response, error in
+        let task = session.dataTask(with: url) {data,response, error in
             
             if let error = error {
                 print("\(error)")
+                completed(.failure(.unableToComplete))
+                
                 return
             }
             
             guard response is HTTPURLResponse else {
                 print("Respuesta no válida")
+                completed(.failure(.invalidResponse))
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 print("Respuesta no válida")
+                completed(.failure(.invalidResponse))
                 return
             }
             
             guard (200...299).contains(httpResponse.statusCode) else {
                 print("Error en la respuesta: \(httpResponse.statusCode)")
+                completed(.failure(.invalidResponse))
                 return
             }
+            
             
             ///Si el llamado funciona
             if let data = data {
@@ -67,14 +78,13 @@ class Scrapper: ObservableObject {
                         //iteramos los valores en un bucle for
                         for element in valoresDolar {
                             let text = try element.text()
-                            try array.append(element.text())
+                            try self.array.append(element.text())
                             print("valor encontrado \(text)")
                             
                         }
-                        print(array)
-                        montoCompraBlue = array[0]
-                        montVentaBlue = array[1]
-                        
+                        print(self.array)
+                        completed(.success(DolarModel(array: self.array)))
+               
                     } catch {
                         print("Error al screappear shit")
                     }
@@ -82,6 +92,7 @@ class Scrapper: ObservableObject {
                 
             } else {
                 print("No se recibieron datos")
+                completed(.failure(.invalidData))
             }
         }
         task.resume()
@@ -89,4 +100,20 @@ class Scrapper: ObservableObject {
     
     
 }
+
+/*
+ valor encontrado $1020 0 blue compra
+ valor encontrado $1040 1 blue venta
+ valor encontrado $1020 2 blue
+ valor encontrado $1040 3 blue
+ valor encontrado $897 4 oficial compra
+ valor encontrado $897 5 oficial venta
+ valor encontrado $1064.60 6 bolsa compra
+ valor encontrado $1069.10 7 bolsa venta
+ valor encontrado $1107.30 8 liqui compra
+ valor encontrado $1111.20 9 liqui venta
+ valor encontrado $1086 10 cripto compra
+ valor encontrado $1104 11 cripto venta
+ valor encontrado $1435.20 12 tarjeta
+ */
 

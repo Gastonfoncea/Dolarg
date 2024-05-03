@@ -14,6 +14,12 @@
 		51C3FB632BE2FA3000667FB4 /* CardPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB622BE2FA3000667FB4 /* CardPrincipal.swift */; };
 		51C3FB662BE42F5100667FB4 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 51C3FB652BE42F5100667FB4 /* SwiftSoup */; };
 		51C3FB692BE43CBE00667FB4 /* Scrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB682BE43CBE00667FB4 /* Scrapper.swift */; };
+		51C454252BE4810A00B4D13B /* DolarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C454242BE4810A00B4D13B /* DolarModel.swift */; };
+		51C454282BE481CE00B4D13B /* DolarEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C454272BE481CE00B4D13B /* DolarEnum.swift */; };
+		51C4542B2BE4838500B4D13B /* DolarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C4542A2BE4838500B4D13B /* DolarViewModel.swift */; };
+		51C4542D2BE5723A00B4D13B /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C4542C2BE5723A00B4D13B /* NetworkErrors.swift */; };
+		51C4542F2BE5794F00B4D13B /* DolarCardLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C4542E2BE5794F00B4D13B /* DolarCardLoading.swift */; };
+		51C454312BE57F1400B4D13B /* GeneralFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C454302BE57F1400B4D13B /* GeneralFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		51C3FB572BE2F19B00667FB4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51C3FB622BE2FA3000667FB4 /* CardPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPrincipal.swift; sourceTree = "<group>"; };
 		51C3FB682BE43CBE00667FB4 /* Scrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrapper.swift; sourceTree = "<group>"; };
+		51C454242BE4810A00B4D13B /* DolarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolarModel.swift; sourceTree = "<group>"; };
+		51C454272BE481CE00B4D13B /* DolarEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolarEnum.swift; sourceTree = "<group>"; };
+		51C4542A2BE4838500B4D13B /* DolarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolarViewModel.swift; sourceTree = "<group>"; };
+		51C4542C2BE5723A00B4D13B /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		51C4542E2BE5794F00B4D13B /* DolarCardLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolarCardLoading.swift; sourceTree = "<group>"; };
+		51C454302BE57F1400B4D13B /* GeneralFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				51C3FB502BE2F19900667FB4 /* DolargApp.swift */,
-				51C3FB522BE2F19900667FB4 /* Home.swift */,
 				51C3FB542BE2F19B00667FB4 /* Assets.xcassets */,
 				51C3FB672BE43CB000667FB4 /* Scrapper */,
 				51C3FB5E2BE2F9DF00667FB4 /* VIews */,
+				51C454232BE480F700B4D13B /* Model */,
+				51C454292BE4836100B4D13B /* ViewModels */,
 				51C3FB562BE2F19B00667FB4 /* Preview Content */,
 			);
 			path = Dolarg;
@@ -78,6 +91,7 @@
 		51C3FB5E2BE2F9DF00667FB4 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
+				51C3FB522BE2F19900667FB4 /* Home.swift */,
 				51C3FB5F2BE2F9E400667FB4 /* Components */,
 			);
 			path = VIews;
@@ -96,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				51C3FB622BE2FA3000667FB4 /* CardPrincipal.swift */,
+				51C4542E2BE5794F00B4D13B /* DolarCardLoading.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -110,9 +125,28 @@
 		51C3FB672BE43CB000667FB4 /* Scrapper */ = {
 			isa = PBXGroup;
 			children = (
+				51C454272BE481CE00B4D13B /* DolarEnum.swift */,
 				51C3FB682BE43CBE00667FB4 /* Scrapper.swift */,
+				51C4542C2BE5723A00B4D13B /* NetworkErrors.swift */,
 			);
 			path = Scrapper;
+			sourceTree = "<group>";
+		};
+		51C454232BE480F700B4D13B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51C454242BE4810A00B4D13B /* DolarModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51C454292BE4836100B4D13B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				51C4542A2BE4838500B4D13B /* DolarViewModel.swift */,
+				51C454302BE57F1400B4D13B /* GeneralFunctions.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +228,12 @@
 				51C3FB632BE2FA3000667FB4 /* CardPrincipal.swift in Sources */,
 				51C3FB692BE43CBE00667FB4 /* Scrapper.swift in Sources */,
 				51C3FB532BE2F19900667FB4 /* Home.swift in Sources */,
+				51C4542B2BE4838500B4D13B /* DolarViewModel.swift in Sources */,
+				51C4542F2BE5794F00B4D13B /* DolarCardLoading.swift in Sources */,
+				51C454282BE481CE00B4D13B /* DolarEnum.swift in Sources */,
+				51C454312BE57F1400B4D13B /* GeneralFunctions.swift in Sources */,
+				51C4542D2BE5723A00B4D13B /* NetworkErrors.swift in Sources */,
+				51C454252BE4810A00B4D13B /* DolarModel.swift in Sources */,
 				51C3FB512BE2F19900667FB4 /* DolargApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
