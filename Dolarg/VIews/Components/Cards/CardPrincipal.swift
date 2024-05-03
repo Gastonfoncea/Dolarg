@@ -13,6 +13,7 @@ struct CardPrincipal: View {
     var tipoDolar: String
     var montoCompra: Any
     var montoVenta: Any
+    var horaActualizacion: String
     
     var body: some View {
         ZStack{
@@ -26,7 +27,7 @@ struct CardPrincipal: View {
                         .font(.headline)
                         .bold()
                         .foregroundStyle(Color.colorText2)
-                    Text("Spread $ \(genFunc.AnyToInt(dato: montoVenta) - genFunc.AnyToInt(dato: montoCompra))")
+                    Text("Ult Vez \(genFunc.DateTimeActualizado(time: horaActualizacion)) hs")
                         .font(.footnote)
                         .foregroundStyle(Color.accentColor)
                         
@@ -80,5 +81,5 @@ struct CardPrincipal: View {
 }
 
 #Preview {
-    CardPrincipal(tipoDolar: "blue",montoCompra: 930, montoVenta: 940)
+    CardPrincipal(tipoDolar: "blue",montoCompra: 930, montoVenta: 940, horaActualizacion: "hora actualizada")
 }

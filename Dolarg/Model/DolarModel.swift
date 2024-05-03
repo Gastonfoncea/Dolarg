@@ -10,5 +10,6 @@ import Foundation
 struct DolarModel {
 
     var array: [Any]
+    var actualizacion: String
       
 }

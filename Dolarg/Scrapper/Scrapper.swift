@@ -72,7 +72,14 @@ class Scrapper {
                         //Crear un objeto documento para analizar el HTML
                         let document: Document = try SwiftSoup.parse(html)
                         
+                        ///Scrap monto de los dolares
+                        //buscamos los valores que tengan la etiquieta siguiente
                         let valoresDolar = try document.select("td.colCompraVenta")
+                        
+                        ///Scrap fecha de actualizacion
+                        let timeActualizacion = try document.select("span.time abbr.timeago").first()
+                        let textActualiacion = try timeActualizacion?.attr("title")
+                        
                         
                         //iteramos los valores en un bucle for
                         for element in valoresDolar {
@@ -82,7 +89,7 @@ class Scrapper {
                             
                         }
                         print(self.array)
-                        completed(.success(DolarModel(array: self.array)))
+                        completed(.success(DolarModel(array: self.array, actualizacion: textActualiacion ?? "Acualizando")))
                
                     } catch {
                         print("Error al screappear shit")
