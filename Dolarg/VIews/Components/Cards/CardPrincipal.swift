@@ -20,19 +20,12 @@ struct CardPrincipal: View {
                 .foregroundStyle(Color.colorTarjetas)
             
             HStack{
-                ZStack{
-                    Circle()
-                        .frame(height: 40)
-                }
-                .padding(.trailing)
-                
-                
-                VStack(alignment: .leading,spacing: 10){
-                    //dolar blue
+                VStack(alignment: .leading,spacing: 15){
+                   
                     Text("\(tipoDolar.capitalized)")
                         .font(.headline)
                         .bold()
-                        .foregroundStyle(Color.colorText1)
+                        .foregroundStyle(Color.colorText2)
                     Text("Spread $ \(genFunc.AnyToInt(dato: montoVenta) - genFunc.AnyToInt(dato: montoCompra))")
                         .font(.footnote)
                         .foregroundStyle(Color.accentColor)
@@ -44,11 +37,11 @@ struct CardPrincipal: View {
                 
                 HStack{
                     Spacer()
-                    VStack(alignment:.leading,spacing: 10){
+                    VStack(alignment:.leading,spacing: 15){
                       
                         
                         Text("\(montoCompra)")
-                            .font(.headline)
+                            .font(.subheadline)
                             .fontWeight(.semibold)
                             .foregroundStyle(Color.colorText2)
                         
@@ -59,10 +52,10 @@ struct CardPrincipal: View {
 
                     }
                     Spacer()
-                    VStack(alignment:.leading, spacing:10){
+                    VStack(alignment:.leading, spacing:15){
                   
                         Text("\(montoVenta)")
-                            .font(.headline)
+                            .font(.subheadline)
                             .fontWeight(.semibold)
                             .foregroundStyle(Color.colorText2)
                         

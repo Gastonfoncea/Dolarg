@@ -14,8 +14,8 @@ import SwiftSoup
 class Scrapper {
     
     static let shared = Scrapper()
-    let baseUrl = "https://dolarhoy.com"
-    @Published var array: [Any] = []
+    let baseUrl = "https://www.infodolar.com"
+    @Published var array: [String] = []
 
   
     
@@ -72,13 +72,12 @@ class Scrapper {
                         //Crear un objeto documento para analizar el HTML
                         let document: Document = try SwiftSoup.parse(html)
                         
-                        //Buscar elementos con la clase especifica "val"
-                        let valoresDolar = try document.getElementsByClass("val")
+                        let valoresDolar = try document.select("td.colCompraVenta")
                         
                         //iteramos los valores en un bucle for
                         for element in valoresDolar {
-                            let text = try element.text()
-                            try self.array.append(element.text())
+                            let text = try element.attr("data-order")
+                            self.array.append(text)
                             print("valor encontrado \(text)")
                             
                         }
