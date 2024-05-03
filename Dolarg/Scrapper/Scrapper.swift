@@ -9,15 +9,13 @@ import Foundation
 import SwiftSoup
 
 
-
-
 class Scrapper {
     
     static let shared = Scrapper()
     let baseUrl = "https://www.infodolar.com"
     @Published var array: [String] = []
 
-  
+   
     
     ///FUNCIONES
     func scrappearDolar(completed:@escaping(Result<DolarModel,NetworkErrors>)->Void ) {
