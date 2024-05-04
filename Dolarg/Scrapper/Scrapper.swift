@@ -13,7 +13,9 @@ class Scrapper {
     
     static let shared = Scrapper()
     let baseUrl = "https://www.infodolar.com"
+    let historicoUrl = "https://www.ambito.com/contenidos/dolar-informal-historico.html"
     @Published var array: [String] = []
+    @Published var arrayHistoricos: [Any] = []
 
    
     
@@ -38,11 +40,11 @@ class Scrapper {
                 return
             }
             
-            guard response is HTTPURLResponse else {
-                print("Respuesta no válida")
-                completed(.failure(.invalidResponse))
-                return
-            }
+//            guard response is HTTPURLResponse else {
+//                print("Respuesta no válida")
+//                completed(.failure(.invalidResponse))
+//                return
+//            }
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 print("Respuesta no válida")
@@ -103,21 +105,76 @@ class Scrapper {
     }
     
     
+    
+    
+    func scrapearHistoricoDolar(completed: @escaping(Result<HistoricoModel,NetworkErrors>)-> Void ) {
+        
+        guard let url = URL(string: historicoUrl) else {
+            print("Url Invalida")
+            completed(.failure(.invalidResponse))
+            return
+        }
+        
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: url) {data, response, error in
+            
+            if let error = error {
+                print("\(error)")
+                completed(.failure(.unableToComplete))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse else {
+                print("respuesta no valida")
+                completed(.failure(.invalidResponse))
+                return
+            }
+            
+            guard (200...299).contains(response.statusCode) else {
+                print("Error en la respuesta: \(response.statusCode)")
+                completed(.failure(.invalidResponse))
+                return
+            }
+            
+            
+            if let data = data {
+                print("succes \(data)")
+                
+                //logica para scrapear los datos de la web
+                
+                //manejamos el html conseguido por la url
+                if String(data:data, encoding: .utf8) != nil {
+                    
+                    do{
+                        //obtener contenido html
+                        let html = try String(contentsOf: url)
+                        
+                        //crear un document para poder scrapear los datos
+                        let document: Document = try SwiftSoup.parse(html)
+                        
+                        let historicos = try document.select("tbody.general-historical__tbody.tbody")
+                        
+                        for historico in historicos {
+                            self.arrayHistoricos.append(historico)
+                        }
+                        print("\(self.arrayHistoricos)")
+                        completed(.success(HistoricoModel(array: self.arrayHistoricos)))
+                        
+                    } catch {
+                        print("No se recibieron datos")
+                        completed(.failure(.invalidData))
+                        
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    
+    
+    
 }
 
-/*
- valor encontrado $1020 0 blue compra
- valor encontrado $1040 1 blue venta
- valor encontrado $1020 2 blue
- valor encontrado $1040 3 blue
- valor encontrado $897 4 oficial compra
- valor encontrado $897 5 oficial venta
- valor encontrado $1064.60 6 bolsa compra
- valor encontrado $1069.10 7 bolsa venta
- valor encontrado $1107.30 8 liqui compra
- valor encontrado $1111.20 9 liqui venta
- valor encontrado $1086 10 cripto compra
- valor encontrado $1104 11 cripto venta
- valor encontrado $1435.20 12 tarjeta
- */
 

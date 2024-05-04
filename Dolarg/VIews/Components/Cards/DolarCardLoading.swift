@@ -15,18 +15,18 @@ struct DolarCardLoading: View {
     var body: some View {
         ZStack{
             Color.colorTarjetas
-                .frame(height: 85)
-                .cornerRadius(15)
+                .frame(height: 70)
+                .cornerRadius(10)
             
             
             Color.white
-                .frame(height: 85)
-                .cornerRadius(15)
+                .frame(height: 70)
+                .cornerRadius(10)
                 .mask(
                     Rectangle()
                         .fill(
                         
-                            LinearGradient(gradient: .init(colors: [.clear,Color.white.opacity(0.25),.clear]), startPoint: .top, endPoint: .bottom)
+                            LinearGradient(gradient: .init(colors: [.clear,Color.white.opacity(0.55),.clear]), startPoint: .top, endPoint: .bottom)
                         )
                         .rotationEffect(.init(degrees: 70))
                         .offset(x: self.show ? center : -center)
@@ -35,7 +35,7 @@ struct DolarCardLoading: View {
         }
         .foregroundStyle(.colorTarjetas)
         .frame(maxWidth: .infinity)
-        .frame(height: 85)
+        .frame(height: 70)
         .onAppear{
             withAnimation(Animation.linear.speed(0.25).delay(0)
                 .repeatForever(autoreverses: false)){

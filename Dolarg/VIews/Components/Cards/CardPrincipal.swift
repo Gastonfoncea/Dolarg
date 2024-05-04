@@ -17,11 +17,11 @@ struct CardPrincipal: View {
     
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 15)
+            RoundedRectangle(cornerRadius: 10)
                 .foregroundStyle(Color.colorTarjetas)
             
             HStack{
-                VStack(alignment: .leading,spacing: 15){
+                VStack(alignment: .leading,spacing: 5){
                    
                     Text("\(tipoDolar.capitalized)")
                         .font(.headline)
@@ -38,33 +38,33 @@ struct CardPrincipal: View {
                 
                 HStack{
                     Spacer()
-                    VStack(alignment:.leading,spacing: 15){
+                    VStack(alignment:.leading,spacing: 5){
                       
+                        Text("Compra")
+                            .font(.footnote)
+                            .fontWeight(.regular)
+                            .foregroundStyle(Color.colorText1)
                         
                         Text("\(montoCompra)")
                             .font(.subheadline)
                             .fontWeight(.semibold)
                             .foregroundStyle(Color.colorText2)
                         
-                        Text("Compra")
-                            .font(.footnote)
-                            .fontWeight(.regular)
-                            .foregroundStyle(Color.colorText1)
+                       
 
                     }
                     Spacer()
-                    VStack(alignment:.leading, spacing:15){
+                    VStack(alignment:.leading, spacing:5){
                   
-                        Text("\(montoVenta)")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(Color.colorText2)
-                        
                         Text("Venta")
                             .font(.footnote)
                             .fontWeight(.regular)
                             .foregroundStyle(Color.colorText1)
-                 
+                        
+                        Text("\(montoVenta)")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(Color.colorText2)
                         
                          
                     }
@@ -75,7 +75,7 @@ struct CardPrincipal: View {
             .padding(.leading)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 85)
+        .frame(height: 70)
 
     }
 }

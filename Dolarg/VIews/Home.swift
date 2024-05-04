@@ -26,7 +26,9 @@ struct Home: View {
                 Spacer()
                 HStack{
                     Text("Precio dolar hoy")
-                        .font(.headline)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.colorText2)
                     Spacer()
                 }
                 
