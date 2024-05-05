@@ -13,9 +13,9 @@ class Scrapper {
     
     static let shared = Scrapper()
     let baseUrl = "https://www.infodolar.com"
-    let historicoUrl = "https://www.ambito.com/contenidos/dolar-informal-historico.html"
+    let historicoUrl = "https://www.bloomberglinea.com/mercados/argentina/dolar-blue-hoy/"
     @Published var array: [String] = []
-    @Published var arrayHistoricos: [Any] = []
+    @Published var arrayHistoricos = [String]()
 
    
     
@@ -153,10 +153,18 @@ class Scrapper {
                         //crear un document para poder scrapear los datos
                         let document: Document = try SwiftSoup.parse(html)
                         
-                        let historicos = try document.select("tbody.general-historical__tbody.tbody")
-                        
-                        for historico in historicos {
-                            self.arrayHistoricos.append(historico)
+                        //buscamos la tabla
+                        let table = try document.select("table.container-fluid").first()
+                        //iteramos sobre los elementos
+                        if let rows = try table?.select("tr") {
+                            for row in rows {
+                                let cells = try row.select("td")
+                                for cell in cells {
+                                    let cellText = try cell.text()
+                                    print(cellText)
+                                    self.arrayHistoricos.append(cellText)
+                                }
+                            }
                         }
                         print("\(self.arrayHistoricos)")
                         completed(.success(HistoricoModel(array: self.arrayHistoricos)))

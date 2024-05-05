@@ -11,9 +11,10 @@ import Foundation
 class DolarViewModel: ObservableObject {
     
     
-    
+    @Published var historicoDolar: HistoricoModel?
     @Published var dolar: DolarModel?
     @Published var isLoading = true
+    @Published var isLoadingHistorico = true
     @Published var error: Error?
     private var timer: Timer?
     
@@ -50,5 +51,28 @@ class DolarViewModel: ObservableObject {
         }
         
     }
+    
+    
+    
+    func fetchHistorico() {
+        print("el historico crack")
+        Scrapper.shared.scrapearHistoricoDolar() {result in
+            DispatchQueue.main.async {
+                self.isLoadingHistorico = false
+                
+                switch result {
+                case .success(let data):
+                    self.historicoDolar = data
+                    
+                case .failure(let error):
+                    self.error = error
+                    print("Error\(error)")
+                }
+            }
+        }
+    }
+    
+    
+    
     
 }

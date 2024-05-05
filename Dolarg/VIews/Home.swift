@@ -32,6 +32,8 @@ struct Home: View {
                     Spacer()
                 }
                 
+              
+                
                 //Tarjeta dolar Blue
                 if dolarVm.isLoading{
                     DolarCardLoading()
@@ -75,7 +77,8 @@ struct Home: View {
         }
         .padding()
         .onAppear {
-            dolarVm.fetchDolar()
+           // dolarVm.fetchDolar()
+            dolarVm.fetchHistorico()
         }
     }
         
