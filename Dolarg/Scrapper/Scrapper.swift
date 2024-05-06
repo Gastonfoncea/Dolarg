@@ -14,11 +14,10 @@ class Scrapper {
     static let shared = Scrapper()
     let baseUrl = "https://www.infodolar.com"
     let historicoUrl = "https://www.bloomberglinea.com/mercados/argentina/dolar-blue-hoy/"
-    @Published var array: [String] = []
-    @Published var arrayHistoricos = [String]()
+    var array: [String] = []
+    var arrayFechaH = [String]()
+    var arrayMontosH = [String]()
 
-   
-    
     ///FUNCIONES
     func scrappearDolar(completed:@escaping(Result<DolarModel,NetworkErrors>)->Void ) {
         //URLSession par hacerlo de forma async
@@ -39,12 +38,6 @@ class Scrapper {
                 
                 return
             }
-            
-//            guard response is HTTPURLResponse else {
-//                print("Respuesta no válida")
-//                completed(.failure(.invalidResponse))
-//                return
-//            }
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 print("Respuesta no válida")
@@ -162,13 +155,26 @@ class Scrapper {
                                 for cell in cells {
                                     let cellText = try cell.text()
                                     print(cellText)
-                                    self.arrayHistoricos.append(cellText)
+                                    if cellText.count == 10 {
+                                        self.arrayFechaH.append(cellText)
+                                    } else {
+                                        
+                                        self.arrayMontosH.append(cellText)
+                                    }
+                                   
                                 }
                             }
                         }
-                        print("\(self.arrayHistoricos)")
-                        completed(.success(HistoricoModel(array: self.arrayHistoricos)))
-                        
+                        var arrayModificado = [String]()
+                        var n = 1
+                        //tratamos el array para solo agregar los montos de venta
+                        for element in stride(from:n,to:self.arrayMontosH.count, by:2) {
+                            arrayModificado.append(self.arrayMontosH[element])
+                            n += 2
+                        }
+                        print("\(self.arrayFechaH)")
+                        print("\(arrayModificado)")
+                        completed(.success(HistoricoModel(arrayFechas: self.arrayMontosH, arrayMontos: arrayModificado)))
                     } catch {
                         print("No se recibieron datos")
                         completed(.failure(.invalidData))

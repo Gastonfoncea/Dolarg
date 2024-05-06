@@ -16,6 +16,7 @@ class DolarViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var isLoadingHistorico = true
     @Published var error: Error?
+    @Published var errorH: Error?
     private var timer: Timer?
     
     

@@ -7,10 +7,11 @@
 
 import SwiftUI
 import SwiftSoup
+import Charts
 
 struct Home: View {
     
-   @StateObject var dolarVm = DolarViewModel()
+    @EnvironmentObject var dolarVm : DolarViewModel
     
     var body: some View {
         NavigationStack{
@@ -22,18 +23,17 @@ struct Home: View {
                         .fontWeight(.semibold)
                     Spacer()
                 }
-               
+               //Chart
+                
+                
                 Spacer()
                 HStack{
                     Text("Precio dolar hoy")
-                        .font(.title2)
+                        .font(.title3)
                         .fontWeight(.semibold)
                         .foregroundStyle(.colorText2)
                     Spacer()
                 }
-                
-              
-                
                 //Tarjeta dolar Blue
                 if dolarVm.isLoading{
                     DolarCardLoading()
@@ -86,5 +86,6 @@ struct Home: View {
 
 #Preview {
     Home()
+        .environmentObject(DolarViewModel())
        
 }

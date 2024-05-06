@@ -11,6 +11,7 @@ import SwiftUI
 struct DolargApp: App {
     
    
+    @StateObject var dolarVm = DolarViewModel()
     
     var body: some Scene {
         WindowGroup {
@@ -19,6 +20,7 @@ struct DolargApp: App {
                    
                 } 
         }
+        .environmentObject(dolarVm)
         
         
     }
