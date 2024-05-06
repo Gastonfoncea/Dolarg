@@ -9,6 +9,6 @@ import Foundation
 
 struct HistoricoModel {
     
-    var arrayFechas: [Any]
+    var arrayFechas: [String]
     var arrayMontos: [String]
 }

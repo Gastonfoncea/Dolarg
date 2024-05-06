@@ -39,5 +39,23 @@ class GeneralFunctions: ObservableObject {
         }
     }
     
+    //de 2024-04-06 a 06-04
+    func formaterTimeChart(fecha: String) -> String {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd" //formato de entrada
+        
+        if let date = dateFormatter.date(from: fecha) {
+            
+            dateFormatter.dateFormat = "dd-MM" //formato de salida
+            
+            let formatedDate = dateFormatter.string(from: date) //formateamos la fecha
+            return formatedDate
+        } else {
+            return "error"
+        }
+    }
+    
     
 }

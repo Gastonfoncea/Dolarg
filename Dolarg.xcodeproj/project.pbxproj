@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5158CE002BE6ABF200C963EA /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5158CDFF2BE6ABF200C963EA /* ChartView.swift */; };
 		5158CE022BE6B9D100C963EA /* HistoricoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5158CE012BE6B9D100C963EA /* HistoricoModel.swift */; };
+		5158CE062BE9825D00C963EA /* DolarChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5158CE052BE9825D00C963EA /* DolarChartModel.swift */; };
 		51C3FB512BE2F19900667FB4 /* DolargApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB502BE2F19900667FB4 /* DolargApp.swift */; };
 		51C3FB532BE2F19900667FB4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB522BE2F19900667FB4 /* Home.swift */; };
 		51C3FB552BE2F19B00667FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51C3FB542BE2F19B00667FB4 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		5158CDFF2BE6ABF200C963EA /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		5158CE012BE6B9D100C963EA /* HistoricoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricoModel.swift; sourceTree = "<group>"; };
+		5158CE052BE9825D00C963EA /* DolarChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolarChartModel.swift; sourceTree = "<group>"; };
 		51C3FB4D2BE2F19900667FB4 /* Dolarg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dolarg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C3FB502BE2F19900667FB4 /* DolargApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolargApp.swift; sourceTree = "<group>"; };
 		51C3FB522BE2F19900667FB4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				51C454242BE4810A00B4D13B /* DolarModel.swift */,
 				5158CE012BE6B9D100C963EA /* HistoricoModel.swift */,
+				5158CE052BE9825D00C963EA /* DolarChartModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				51C3FB632BE2FA3000667FB4 /* CardPrincipal.swift in Sources */,
 				51C3FB692BE43CBE00667FB4 /* Scrapper.swift in Sources */,
 				51C3FB532BE2F19900667FB4 /* Home.swift in Sources */,
+				5158CE062BE9825D00C963EA /* DolarChartModel.swift in Sources */,
 				51C4542B2BE4838500B4D13B /* DolarViewModel.swift in Sources */,
 				51C4542F2BE5794F00B4D13B /* DolarCardLoading.swift in Sources */,
 				51C454282BE481CE00B4D13B /* DolarEnum.swift in Sources */,

@@ -174,7 +174,7 @@ class Scrapper {
                         }
                         print("\(self.arrayFechaH)")
                         print("\(arrayModificado)")
-                        completed(.success(HistoricoModel(arrayFechas: self.arrayMontosH, arrayMontos: arrayModificado)))
+                        completed(.success(HistoricoModel(arrayFechas: self.arrayFechaH, arrayMontos: arrayModificado)))
                     } catch {
                         print("No se recibieron datos")
                         completed(.failure(.invalidData))

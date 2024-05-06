@@ -23,10 +23,10 @@ struct Home: View {
                         .fontWeight(.semibold)
                     Spacer()
                 }
-               //Chart
+                ChartView()
                 
                 
-                Spacer()
+             
                 HStack{
                     Text("Precio dolar hoy")
                         .font(.title3)
@@ -73,12 +73,15 @@ struct Home: View {
               
             }
             .padding(.top,50)
-            //.navigationTitle("Dolarg 🇦🇷")
+            
         }
         .padding()
         .onAppear {
-           // dolarVm.fetchDolar()
+            dolarVm.fetchDolar()
             dolarVm.fetchHistorico()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)){ _ in
+            dolarVm.fetchDolar()
         }
     }
         
