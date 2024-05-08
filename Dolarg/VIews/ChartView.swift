@@ -35,20 +35,30 @@ struct ChartView: View {
                 ]
                 
                 VStack{
+                    HStack{
+                        Text("Ultimas Cotizaciones")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.colorText2)
+                        Spacer()
+                    }
+                    .padding(.bottom)
                     Chart {
                         ForEach(data) { d in
                             BarMark(x: PlottableValue.value("Dias", d.fecha), y: .value("Precios", d.monto)
                             )
                                 .annotation {
                                     Text(String(d.monto))
+                                        .font(.caption)
                                 }
-                                .foregroundStyle(Color.accentColor.gradient)
+                                .foregroundStyle(Color.accentColor.opacity(0.8))
+                                
+                                
                                 
                         }
                     }
                 }
                 .frame(height: 180)
-             
                 .chartYAxis(.hidden)
                 .chartPlotStyle { plotContent in
                     plotContent

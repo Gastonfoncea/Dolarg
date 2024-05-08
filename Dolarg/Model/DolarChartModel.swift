@@ -11,5 +11,5 @@ struct DolarChartModel: Identifiable {
     var id = UUID().uuidString
     var fecha: String
     var monto: Int
-    
+    var animate: Bool = false
 }
