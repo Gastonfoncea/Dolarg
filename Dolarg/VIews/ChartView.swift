@@ -58,6 +58,7 @@ struct ChartView: View {
                     }
                 }
                 .frame(height: 180)
+                .padding(.top,-20)
                 .chartYAxis(.hidden)
                 .chartPlotStyle { plotContent in
                     plotContent

@@ -19,17 +19,14 @@ struct Home: View {
                
                 VStack(spacing:20) {
                   
-                    HStack{
-                        Text("Bienvenido a Dolarg 🇦🇷")
-                            .font(.largeTitle)
-                            .fontWeight(.ultraLight)
-                            .foregroundStyle(.colorText2)
-                        Spacer()
-                    }
-                    .offset(y:20)
+                    
+                    Divider()
+                        .padding(.top,50)
+                        .padding(.bottom)
                     
                     Spacer()
                     ChartView()
+                       
                     
 
                     HStack{

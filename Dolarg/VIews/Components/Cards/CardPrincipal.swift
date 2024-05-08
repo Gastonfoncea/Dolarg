@@ -9,11 +9,11 @@ import SwiftUI
 
 struct CardPrincipal: View {
     
-   @StateObject var genFunc = GeneralFunctions()
+    @StateObject var genFunc = GeneralFunctions()
     var tipoDolar: String
-    var montoCompra: Any
-    var montoVenta: Any
-    var horaActualizacion: String
+    @State var montoCompra: Any
+    @State var montoVenta: Any
+    @State var horaActualizacion: String
     
     var body: some View {
         ZStack{
