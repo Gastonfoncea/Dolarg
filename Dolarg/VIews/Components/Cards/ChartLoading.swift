@@ -14,7 +14,7 @@ struct ChartLoading: View {
     
     var body: some View {
         ZStack{
-            Color.colorTarjetas
+            Color.black.opacity(0.9)
                 .frame(height: 180)
                 .cornerRadius(10)
             
@@ -26,7 +26,7 @@ struct ChartLoading: View {
                     Rectangle()
                         .fill(
                         
-                            LinearGradient(gradient: .init(colors: [.clear,Color.white.opacity(0.55),.clear]), startPoint: .top, endPoint: .bottom)
+                            LinearGradient(gradient: .init(colors: [.clear,Color.black.opacity(0.15),.clear]), startPoint: .top, endPoint: .bottom)
                         )
                         .rotationEffect(.init(degrees: 70))
                         .offset(x: self.show ? center : -center)

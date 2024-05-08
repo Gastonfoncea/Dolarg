@@ -18,11 +18,11 @@ struct ChartView: View {
         VStack {
             
             if dolarVm.isLoadingHistorico {
-                    ChartLoading()
+                ChartLoading()
             } else if dolarVm.errorH != nil {
                 ContentUnavailableView("Error en la red", systemImage: "network.slash")
             } else if let dolarHistoricoData = dolarVm.historicoDolar {
-    
+                
                 let data = [
                     DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[6]) , monto:Int("\(dolarHistoricoData.arrayMontos[6])")!),
                     DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[5]) , monto:Int("\(dolarHistoricoData.arrayMontos[5])")!),
@@ -35,39 +35,44 @@ struct ChartView: View {
                 
                 VStack{
                     HStack{
-                        Text("Ultimas Cotizaciones")
+                        Text("Ultimas Cotizaciones de la semana")
                             .font(.title3)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(.colorText2)
+                            .fontWeight(.medium)
+                            .foregroundStyle(.white)
                         Spacer()
                     }
                     .padding(.bottom)
                     Chart {
                         ForEach(data) { d in
-                            BarMark(x: PlottableValue.value("Dias", d.fecha), y: .value("Precios", d.monto)
-                            )
+                            BarMark(x: PlottableValue.value("Dias", d.fecha), y: .value("Precios", d.monto))
                                 .annotation {
-                                    Text(String(d.monto))
+                                    Text(String(genfunc.separadorDeMil(num: d.monto)))
                                         .font(.caption)
+                                        .foregroundStyle(.white)
                                 }
-                                .foregroundStyle(Color.accentColor.opacity(0.8))
-                                
-                                
-                                
+                                .foregroundStyle(Color.accentColor.gradient)
+                            
+                            
+                            
                         }
                     }
-                }
-                .frame(height: 180)
-                .padding(.top,-20)
-                .chartYAxis(.hidden)
-                .chartPlotStyle { plotContent in
-                    plotContent
-                        .background(Color.clear)
+                    .chartXAxis {AxisMarks(values: .automatic) {
+                        AxisValueLabel()
+                            .foregroundStyle(Color.white)// <= change the style of the label
+                    }
+                    }
+                    
+                    .chartYAxis(.hidden)
+                    .chartPlotStyle { plotContent in
+                        plotContent
+                            .foregroundStyle(.white)
                         
+                    }
                 }
             }
-                
+            
         }
+        .frame(height: 180)
         .onAppear {
             dolarVm.fetchHistorico()
         }

@@ -57,5 +57,17 @@ class GeneralFunctions: ObservableObject {
         }
     }
     
+    func separadorDeMil(num: Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        if let numberString = formatter.string(from: NSNumber(value: num)) {
+            return numberString
+        }
+        
+        return String(num)
+    }
+    
     
 }

@@ -24,6 +24,8 @@
 		51C4542D2BE5723A00B4D13B /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C4542C2BE5723A00B4D13B /* NetworkErrors.swift */; };
 		51C4542F2BE5794F00B4D13B /* DolarCardLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C4542E2BE5794F00B4D13B /* DolarCardLoading.swift */; };
 		51C454312BE57F1400B4D13B /* GeneralFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C454302BE57F1400B4D13B /* GeneralFunctions.swift */; };
+		51E506C02BEC231F0002FFC6 /* WhiteCardBackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E506BF2BEC231F0002FFC6 /* WhiteCardBackGround.swift */; };
+		51E506C22BEC23490002FFC6 /* ColorBackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E506C12BEC23490002FFC6 /* ColorBackGround.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		51C4542C2BE5723A00B4D13B /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
 		51C4542E2BE5794F00B4D13B /* DolarCardLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolarCardLoading.swift; sourceTree = "<group>"; };
 		51C454302BE57F1400B4D13B /* GeneralFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFunctions.swift; sourceTree = "<group>"; };
+		51E506BF2BEC231F0002FFC6 /* WhiteCardBackGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCardBackGround.swift; sourceTree = "<group>"; };
+		51E506C12BEC23490002FFC6 /* ColorBackGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBackGround.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 		51C3FB5F2BE2F9E400667FB4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				51E506BE2BEC23100002FFC6 /* BackGround */,
 				51C3FB612BE2FA2100667FB4 /* Buttons */,
 				51C3FB602BE2FA1A00667FB4 /* Cards */,
 			);
@@ -159,6 +164,15 @@
 				51C454302BE57F1400B4D13B /* GeneralFunctions.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		51E506BE2BEC23100002FFC6 /* BackGround */ = {
+			isa = PBXGroup;
+			children = (
+				51E506BF2BEC231F0002FFC6 /* WhiteCardBackGround.swift */,
+				51E506C12BEC23490002FFC6 /* ColorBackGround.swift */,
+			);
+			path = BackGround;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,12 +259,14 @@
 				51C4542B2BE4838500B4D13B /* DolarViewModel.swift in Sources */,
 				51C4542F2BE5794F00B4D13B /* DolarCardLoading.swift in Sources */,
 				51C454282BE481CE00B4D13B /* DolarEnum.swift in Sources */,
+				51E506C02BEC231F0002FFC6 /* WhiteCardBackGround.swift in Sources */,
 				51C454312BE57F1400B4D13B /* GeneralFunctions.swift in Sources */,
 				5158CE002BE6ABF200C963EA /* ChartView.swift in Sources */,
 				51C4542D2BE5723A00B4D13B /* NetworkErrors.swift in Sources */,
 				51C454252BE4810A00B4D13B /* DolarModel.swift in Sources */,
 				51C3FB512BE2F19900667FB4 /* DolargApp.swift in Sources */,
 				519CEB9C2BEAFAD9005144E7 /* ChartLoading.swift in Sources */,
+				51E506C22BEC23490002FFC6 /* ColorBackGround.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,10 @@ struct CardPrincipal: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 10)
-                .foregroundStyle(Color.colorTarjetas)
+                .foregroundStyle(Color.clear)
+                .background {
+                    LinearGradient(colors: [Color.white,Color.accentColor.opacity(0.2)], startPoint: .leading, endPoint: .trailing)
+                }
             
             HStack{
                 VStack(alignment: .leading,spacing: 5){
@@ -76,6 +79,7 @@ struct CardPrincipal: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 70)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
 
     }
 }
