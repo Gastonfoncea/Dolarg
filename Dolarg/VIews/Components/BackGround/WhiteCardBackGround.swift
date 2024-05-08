@@ -12,7 +12,7 @@ struct WhiteCardBackGround: View {
         RoundedRectangle(cornerRadius: 20)
             .fill(.white)
             .ignoresSafeArea(.all)
-            .frame(height: 620)
+            .frame(height: 460)
 
     }
 }

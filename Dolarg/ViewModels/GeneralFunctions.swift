@@ -70,4 +70,19 @@ class GeneralFunctions: ObservableObject {
     }
     
     
+    
+    func MesEnCurso() -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "es_ES")
+        formatter.dateFormat = "MMMM"
+        return formatter.string(from: Date())
+    }
+    
+    func diaEnCurso() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter.string(from: Date())
+    }
+    
+    
 }

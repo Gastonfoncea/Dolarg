@@ -11,6 +11,7 @@ import Charts
 
 struct Home: View {
     
+    @StateObject var genFunc = GeneralFunctions()
     @EnvironmentObject var dolarVm : DolarViewModel
     
     var body: some View {
@@ -21,14 +22,16 @@ struct Home: View {
                 
                 ScrollView {
                     VStack(spacing:30) {
+                        
                         //MARK: Vista color animado
                         ZStack {
                             VStack{
                                 HStack{
-                                    Text("Mayo")
+                                    Text("\(genFunc.MesEnCurso().capitalized)")
                                         .font(.headline)
                                         .fontWeight(.bold)
                                         .foregroundStyle(.white)
+                                        .padding(.bottom)
                                     Spacer()
                                 }
                                 ChartView()
@@ -36,20 +39,23 @@ struct Home: View {
                             
                         }
                         .padding(.horizontal,20)
+                        
                         //MARK: Vista color Blanco
                         ZStack {
                             WhiteCardBackGround()
+                                .ignoresSafeArea(.all)
                             VStack{
                                 HStack{
                                     Text("Precio dolar hoy")
                                         .font(.title3)
                                         .fontWeight(.medium)
                                         .foregroundStyle(.colorText2)
-                                    Text(" 08-05-2024")
+                                    Spacer()
+                                    Text("\(genFunc.diaEnCurso())")
                                         .font(.footnote)
                                         .fontWeight(.bold)
                                         .foregroundStyle(Color.gray)
-                                    Spacer()
+                                   
                                 }
                                 //Tarjeta dolar Blue
                                 if dolarVm.isLoading{
@@ -89,23 +95,30 @@ struct Home: View {
                                 }
                                 
                             }
-                            .padding(.top,-240)
+                            .padding(.top,-70)
                             .padding(.horizontal,20)
                                 
                                 
                             
                         }
+                        .padding(.bottom,-40)
                       
                     }
-                    .padding(.top,80)
+                    .padding(.top,60)
                   
                 }
+                .scrollIndicators(.hidden)
             }
+            .navigationTitle("Dolarg 🇦🇷")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleTextColor(.gray)
+            
         }
         .refreshable {
             dolarVm.fetchHistorico()
             dolarVm.fetchDolar()
         }
+        
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)){ _ in
             dolarVm.fetchDolar()
         }
@@ -118,4 +131,15 @@ struct Home: View {
     Home()
         .environmentObject(DolarViewModel())
        
+}
+
+
+extension View {
+    @available(iOS 14, *)
+    func navigationBarTitleTextColor(_ color: Color) -> some View {
+        let uiColor = UIColor(color)
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: uiColor ]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: uiColor ]
+        return self
+    }
 }
