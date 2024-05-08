@@ -18,8 +18,7 @@ struct ChartView: View {
         VStack {
             
             if dolarVm.isLoadingHistorico {
-               // Text("Is loading")
-                //crear tarjeta con animation para reflejar la carga de datos
+                    ChartLoading()
             } else if dolarVm.errorH != nil {
                 ContentUnavailableView("Error en la red", systemImage: "network.slash")
             } else if let dolarHistoricoData = dolarVm.historicoDolar {

@@ -1,13 +1,13 @@
 //
-//  DolarCardLoading.swift
+//  ChartLoading.swift
 //  Dolarg
 //
-//  Created by Gaston Foncea on 03/05/2024.
+//  Created by Gaston Foncea on 07/05/2024.
 //
 
 import SwiftUI
 
-struct DolarCardLoading: View {
+struct ChartLoading: View {
     
     @State var show = false
     var center = (UIScreen.main.bounds.width / 2) + 110
@@ -15,12 +15,12 @@ struct DolarCardLoading: View {
     var body: some View {
         ZStack{
             Color.colorTarjetas
-                .frame(height: 70)
+                .frame(height: 180)
                 .cornerRadius(10)
             
             
             Color.white
-                .frame(height: 70)
+                .frame(height: 180)
                 .cornerRadius(10)
                 .mask(
                     Rectangle()
@@ -35,7 +35,7 @@ struct DolarCardLoading: View {
         }
         .foregroundStyle(.colorTarjetas)
         .frame(maxWidth: .infinity)
-        .frame(height: 70)
+        .frame(height: 180)
         .onAppear{
             withAnimation(Animation.linear.speed(0.35).delay(0)
                 .repeatForever(autoreverses: false)){
@@ -44,8 +44,9 @@ struct DolarCardLoading: View {
         }
 
     }
-}
+
+    }
 
 #Preview {
-    DolarCardLoading()
+    ChartLoading()
 }
