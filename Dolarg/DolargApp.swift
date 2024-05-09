@@ -11,7 +11,7 @@ import SwiftUI
 struct DolargApp: App {
     
    
-    @StateObject var dolarVm = DolarViewModel()
+    @ObservedObject var dolarVm = DolarViewModel()
     @Environment(\.scenePhase) private var scenePhase
     
     var body: some Scene {
