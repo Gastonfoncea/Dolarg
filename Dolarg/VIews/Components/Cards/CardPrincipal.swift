@@ -14,13 +14,24 @@ struct CardPrincipal: View {
     @State var montoCompra: Any
     @State var montoVenta: Any
     @State var horaActualizacion: String
+    private let gradientColors = [
+        Color.white,
+        Color.white.opacity(0.1),
+        Color.white.opacity(0.1),
+        Color.white.opacity(0.4),
+        Color.white.opacity(0.5),
+        Color.accentColor.opacity(0.5)
+    ]
+    
     
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 10)
-                .foregroundStyle(Color.clear)
-                .background {
-                    LinearGradient(colors: [Color.white,Color.accentColor.opacity(0.2)], startPoint: .leading, endPoint: .trailing)
+                .fill(Material.ultraThinMaterial)
+                .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(LinearGradient(colors: gradientColors, startPoint: .topTrailing, endPoint: .bottomLeading))
                 }
             
             HStack{
@@ -29,7 +40,7 @@ struct CardPrincipal: View {
                     Text("\(tipoDolar.capitalized)")
                         .font(.headline)
                         .bold()
-                        .foregroundStyle(Color.colorText2)
+                        .foregroundStyle(Color.white)
                     Text("Ult Vez \(genFunc.DateTimeActualizado(time: horaActualizacion)) hs")
                         .font(.footnote)
                         .foregroundStyle(Color.accentColor)
@@ -51,7 +62,7 @@ struct CardPrincipal: View {
                         Text("\(montoCompra)")
                             .font(.subheadline)
                             .fontWeight(.semibold)
-                            .foregroundStyle(Color.colorText2)
+                            .foregroundStyle(Color.white)
                         
                        
 
@@ -67,7 +78,7 @@ struct CardPrincipal: View {
                         Text("\(montoVenta)")
                             .font(.subheadline)
                             .fontWeight(.semibold)
-                            .foregroundStyle(Color.colorText2)
+                            .foregroundStyle(Color.white)
                         
                          
                     }
@@ -87,3 +98,6 @@ struct CardPrincipal: View {
 #Preview {
     CardPrincipal(tipoDolar: "blue",montoCompra: 930, montoVenta: 940, horaActualizacion: "hora actualizada")
 }
+
+
+// .fill(LinearGradient(colors: gradientColors, startPoint: .topLeading, endPoint: .bottomTrailing))

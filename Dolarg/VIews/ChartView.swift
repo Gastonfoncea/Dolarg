@@ -13,6 +13,15 @@ struct ChartView: View {
     
     @StateObject var genfunc = GeneralFunctions()
     @EnvironmentObject var dolarVm: DolarViewModel
+    private let gradientColors = [
+        
+        Color.white,
+        Color.white.opacity(0.1),
+        Color.white.opacity(0.1),
+        Color.white.opacity(0.4),
+        Color.white.opacity(0.5),
+        Color.accentColor.opacity(0.5),
+    ]
     
     var body: some View {
         VStack {
@@ -34,45 +43,58 @@ struct ChartView: View {
                 ]
                 
                 VStack{
-                    HStack{
-                        Text("Ultimas Cotizaciones de la semana")
-                            .font(.title3)
-                            .fontWeight(.medium)
-                            .foregroundStyle(.white)
-                        Spacer()
-                    }
-                    .padding(.bottom)
-                    Chart {
-                        ForEach(data) { d in
-                            BarMark(x: PlottableValue.value("Dias", d.fecha), y: .value("Precios", d.monto))
-                                .annotation {
-                                    Text(String(genfunc.separadorDeMil(num: d.monto)))
-                                        .font(.caption)
-                                        .foregroundStyle(.white)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Material.ultraThin)
+                            .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(LinearGradient(colors: gradientColors, startPoint: .topTrailing, endPoint: .bottomLeading))
+                            }
+                            
+                        VStack {
+                            HStack{
+                                Text("Ultimas cotizaciones blue")
+                                    .font(.footnote)
+                                    .fontWeight(.regular)
+                                    .foregroundStyle(.white)
+                                Spacer()
+                            }
+                            .padding(.leading,20)
+                            Chart {
+                                ForEach(data) { d in
+                                    BarMark(x: PlottableValue.value("Dias", d.fecha), y: .value("Precios", d.monto))
+                                        .annotation {
+                                            Text(String(genfunc.separadorDeMil(num: d.monto)))
+                                                .font(.caption)
+                                                .foregroundStyle(Color.colorText1)
+                                        }
+                                        .foregroundStyle(Color.accentColor.gradient)
                                 }
-                                .foregroundStyle(Color.accentColor.gradient)
+                            }
+                            .frame(height: 150)
+                            .padding(.horizontal)
+                           //.padding(.bottom)
+                            .chartXAxis {AxisMarks(values: .automatic) {
+                                AxisValueLabel()
+                                    .foregroundStyle(Color.colorText1)// <= change the style of the label
+                            }
+                            }
                             
-                            
-                            
+                            .chartYAxis(.hidden)
+                            .chartPlotStyle { plotContent in
+                                plotContent
+                                    .foregroundStyle(Color.colorText1)
+                                
+                        }
                         }
                     }
-                    .chartXAxis {AxisMarks(values: .automatic) {
-                        AxisValueLabel()
-                            .foregroundStyle(Color.white)// <= change the style of the label
-                    }
-                    }
-                    
-                    .chartYAxis(.hidden)
-                    .chartPlotStyle { plotContent in
-                        plotContent
-                            .foregroundStyle(.white)
-                        
-                    }
+                
                 }
             }
             
         }
-        .frame(height: 180)
+        .frame(height: 210)
         .onAppear {
             dolarVm.fetchHistorico()
         }

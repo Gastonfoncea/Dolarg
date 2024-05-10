@@ -15,12 +15,12 @@ struct ChartLoading: View {
     var body: some View {
         ZStack{
             Color.black.opacity(0.9)
-                .frame(height: 180)
+                .frame(height: 210)
                 .cornerRadius(10)
             
             
             Color.white
-                .frame(height: 180)
+                .frame(height: 210)
                 .cornerRadius(10)
                 .mask(
                     Rectangle()
@@ -33,9 +33,9 @@ struct ChartLoading: View {
                 )
                 
         }
-        .foregroundStyle(.colorTarjetas)
+        .foregroundStyle(.colorTarjetas.opacity(0.5))
         .frame(maxWidth: .infinity)
-        .frame(height: 180)
+        .frame(height: 210)
         .onAppear{
             withAnimation(Animation.linear.speed(0.35).delay(0)
                 .repeatForever(autoreverses: false)){

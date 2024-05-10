@@ -34,13 +34,14 @@ class DolarViewModel: ObservableObject {
     }
     
     func fetchDolar() {
-        print("Scrapeando datos como un hacker")
+       print("Scrapeando datos como un hacker")
         Scrapper.shared.scrappearDolar() {result in
             DispatchQueue.main.async {
                 self.isLoading = false
                 
                 switch result {
                 case .success(let data):
+                    print(self.dolar?.array ?? "")
                     self.dolar = data
                     
                 case .failure(let error):
@@ -56,7 +57,7 @@ class DolarViewModel: ObservableObject {
     
     
     func fetchHistorico() {
-        print("el historico crack")
+        //print("el historico crack")
         Scrapper.shared.scrapearHistoricoDolar() {result in
             DispatchQueue.main.async {
                 self.isLoadingHistorico = false

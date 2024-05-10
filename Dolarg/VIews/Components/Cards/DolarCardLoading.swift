@@ -14,7 +14,7 @@ struct DolarCardLoading: View {
     
     var body: some View {
         ZStack{
-            Color.colorTarjetas
+            Color.black.opacity(0.9)
                 .frame(height: 70)
                 .cornerRadius(10)
             
@@ -33,7 +33,7 @@ struct DolarCardLoading: View {
                 )
                 
         }
-        .foregroundStyle(.colorTarjetas)
+        .foregroundStyle(.colorTarjetas.opacity(0.5))
         .frame(maxWidth: .infinity)
         .frame(height: 70)
         .onAppear{

@@ -78,10 +78,10 @@ class Scrapper {
                         for element in valoresDolar {
                             let text = try element.attr("data-order")
                             self.array.append(text)
-                            print("valor encontrado \(text)")
+                           // print("valor encontrado \(text)")
                             
                         }
-                        print(self.array)
+                        //xprint(self.array)
                         completed(.success(DolarModel(array: self.array, actualizacion: textActualiacion ?? "Acualizando")))
                
                     } catch {
@@ -154,7 +154,7 @@ class Scrapper {
                                 let cells = try row.select("td")
                                 for cell in cells {
                                     let cellText = try cell.text()
-                                    print(cellText)
+                                   // print(cellText)
                                     if cellText.count == 10 {
                                         self.arrayFechaH.append(cellText)
                                     } else {
@@ -172,8 +172,8 @@ class Scrapper {
                             arrayModificado.append(self.arrayMontosH[element])
                             n += 2
                         }
-                        print("\(self.arrayFechaH)")
-                        print("\(arrayModificado)")
+                       // print("\(self.arrayFechaH)")
+                        //print("\(arrayModificado)")
                         completed(.success(HistoricoModel(arrayFechas: self.arrayFechaH, arrayMontos: arrayModificado)))
                     } catch {
                         print("No se recibieron datos")

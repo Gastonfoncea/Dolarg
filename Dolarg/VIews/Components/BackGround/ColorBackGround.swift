@@ -15,7 +15,7 @@ struct ColorBackGround: View {
         RoundedRectangle(cornerRadius: 0)
             .foregroundStyle(.clear)
             .background {
-                LinearGradient(colors: [Color.black,Color.accentColor], startPoint: .topLeading, endPoint: .leading)
+                LinearGradient(colors: [Color.accentColor,Color.black], startPoint: .topTrailing, endPoint: .leading)
                     .hueRotation(.degrees(animateGradient ? 30 : 0))
                     .onAppear{
                         withAnimation(.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
