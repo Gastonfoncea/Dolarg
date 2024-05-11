@@ -15,12 +15,12 @@ struct CardPrincipal: View {
     @State var montoVenta: Any
     @State var horaActualizacion: String
     private let gradientColors = [
-        Color.white,
-        Color.white.opacity(0.1),
-        Color.white.opacity(0.1),
+        Color.white.opacity(0.8),
+        Color.accentColor.opacity(0.5),
         Color.white.opacity(0.4),
         Color.white.opacity(0.5),
-        Color.accentColor.opacity(0.5)
+        Color.white.opacity(0.1),
+        Color.white.opacity(0.1),
     ]
     
     
@@ -31,7 +31,7 @@ struct CardPrincipal: View {
                 .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
                 .overlay {
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(LinearGradient(colors: gradientColors, startPoint: .topTrailing, endPoint: .bottomLeading))
+                        .stroke(LinearGradient(colors: gradientColors, startPoint: .top, endPoint: .bottom))
                 }
             
             HStack{

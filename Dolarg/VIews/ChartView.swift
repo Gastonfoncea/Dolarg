@@ -14,13 +14,12 @@ struct ChartView: View {
     @StateObject var genfunc = GeneralFunctions()
     @EnvironmentObject var dolarVm: DolarViewModel
     private let gradientColors = [
-        
         Color.white,
-        Color.white.opacity(0.1),
-        Color.white.opacity(0.1),
+        Color.accentColor.opacity(0.5),
         Color.white.opacity(0.4),
         Color.white.opacity(0.5),
-        Color.accentColor.opacity(0.5),
+        Color.white.opacity(0.1),
+        Color.white.opacity(0.1),
     ]
     
     var body: some View {

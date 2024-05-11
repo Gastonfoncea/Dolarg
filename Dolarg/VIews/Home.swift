@@ -30,14 +30,6 @@ struct Home: View {
                                 Spacer()
                             }
                             
-//                            HStack{
-//                                Text("Dolarg 🇦🇷")
-//                                    .foregroundStyle(.colorText1)
-//                                    .font(.callout)
-//                                    .fontWeight(.medium)
-//                                Spacer()
-//                            }
-                            
                             ChartView()
                                 .padding(.bottom)
                                 HStack{
