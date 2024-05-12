@@ -20,6 +20,7 @@ struct Home: View {
                 ColorBackGround()
                     .ignoresSafeArea(.all)
                 
+                
                 ScrollView {
                         VStack(spacing:15) {
                             HStack{
