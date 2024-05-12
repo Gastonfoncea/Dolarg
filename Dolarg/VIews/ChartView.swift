@@ -75,8 +75,8 @@ struct ChartView: View {
                                 }
                             }
                             .frame(height: 150)
+                            .frame(maxWidth:.infinity)
                             .padding(.horizontal)
-                           //.padding(.bottom)
                             .chartXAxis {AxisMarks(values: .automatic) {
                                 AxisValueLabel()
                                     .foregroundStyle(Color.colorText1)// <= change the style of the label
@@ -93,12 +93,10 @@ struct ChartView: View {
                         if showAnimation {
                             ChartAnimationStroke()
                         }
-                        
-                       
                     }
                     .onAppear {
-                        withAnimation(.easeInOut) {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                        withAnimation(.smooth) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
                                 showAnimation = false
                             }
                         }
@@ -110,6 +108,7 @@ struct ChartView: View {
             
         }
         .frame(height: 210)
+        .frame(maxWidth:.infinity)
         .onAppear {
             dolarVm.fetchHistorico()
         }

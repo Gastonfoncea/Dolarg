@@ -11,29 +11,34 @@ struct ChartAnimationStroke: View {
     @State var rotation: CGFloat = 0.0
     var body: some View {
         ZStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .frame(maxWidth:.infinity)
+                    .frame(height: 210)
+                    .foregroundStyle(LinearGradient(gradient: Gradient(colors: [.red,.orange,.green,.blue,.purple,.pink]), startPoint: .top, endPoint: .bottom))
+                    .rotationEffect(.degrees(rotation))
+                    .mask {
+                        //rectangulo del stroke
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .stroke(lineWidth: 1.2)
+                            .frame(maxWidth:.infinity)
+                            .frame(height: 210)
+                    }
+                    .clipped()
+                   
+            }
             RoundedRectangle(cornerRadius: 10)
-                .frame(width:200)
-                //.frame(width: 100)
-                .frame(height: 210)
-                .foregroundStyle(LinearGradient(gradient: Gradient(colors: [.red,.orange,.yellow,.green,.blue,.purple,.pink]), startPoint: .top, endPoint: .bottom))
-                .rotationEffect(.degrees(rotation))
-                .mask {
-                    //rectangulo del stroke
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .stroke(lineWidth: 1)
-                        .frame(width:210,height: 210)
-
-                }
-                .clipped()
-               
+                .foregroundStyle(.clear)
         }
-       // .frame(maxWidth: .infinity)
         .frame(height: 210)
+        .frame(maxWidth: .infinity)
+        .clipped()
         .onAppear {
-            withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses:true)) {
+            withAnimation(.spring(duration: 3).repeatForever()) {
                 rotation = 180
                 }
-            }
+    }
+        
         }
     }
 
