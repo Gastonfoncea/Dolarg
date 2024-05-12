@@ -10,6 +10,7 @@
 		5158CE002BE6ABF200C963EA /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5158CDFF2BE6ABF200C963EA /* ChartView.swift */; };
 		5158CE022BE6B9D100C963EA /* HistoricoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5158CE012BE6B9D100C963EA /* HistoricoModel.swift */; };
 		5158CE062BE9825D00C963EA /* DolarChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5158CE052BE9825D00C963EA /* DolarChartModel.swift */; };
+		5199EE402BF018A300B5BABD /* ChartAnimationStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5199EE3F2BF018A300B5BABD /* ChartAnimationStroke.swift */; };
 		519CEB9C2BEAFAD9005144E7 /* ChartLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CEB9B2BEAFAD8005144E7 /* ChartLoading.swift */; };
 		51C3FB512BE2F19900667FB4 /* DolargApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB502BE2F19900667FB4 /* DolargApp.swift */; };
 		51C3FB532BE2F19900667FB4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB522BE2F19900667FB4 /* Home.swift */; };
@@ -32,6 +33,7 @@
 		5158CDFF2BE6ABF200C963EA /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		5158CE012BE6B9D100C963EA /* HistoricoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricoModel.swift; sourceTree = "<group>"; };
 		5158CE052BE9825D00C963EA /* DolarChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolarChartModel.swift; sourceTree = "<group>"; };
+		5199EE3F2BF018A300B5BABD /* ChartAnimationStroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartAnimationStroke.swift; sourceTree = "<group>"; };
 		519CEB9B2BEAFAD8005144E7 /* ChartLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLoading.swift; sourceTree = "<group>"; };
 		51C3FB4D2BE2F19900667FB4 /* Dolarg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dolarg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C3FB502BE2F19900667FB4 /* DolargApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolargApp.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				51C3FB622BE2FA3000667FB4 /* CardPrincipal.swift */,
 				51C4542E2BE5794F00B4D13B /* DolarCardLoading.swift */,
 				519CEB9B2BEAFAD8005144E7 /* ChartLoading.swift */,
+				5199EE3F2BF018A300B5BABD /* ChartAnimationStroke.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				51C4542F2BE5794F00B4D13B /* DolarCardLoading.swift in Sources */,
 				51C454282BE481CE00B4D13B /* DolarEnum.swift in Sources */,
 				51E506C02BEC231F0002FFC6 /* WhiteCardBackGround.swift in Sources */,
+				5199EE402BF018A300B5BABD /* ChartAnimationStroke.swift in Sources */,
 				51C454312BE57F1400B4D13B /* GeneralFunctions.swift in Sources */,
 				5158CE002BE6ABF200C963EA /* ChartView.swift in Sources */,
 				51C4542D2BE5723A00B4D13B /* NetworkErrors.swift in Sources */,

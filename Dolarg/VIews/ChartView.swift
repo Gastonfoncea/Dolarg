@@ -13,6 +13,8 @@ struct ChartView: View {
     
     @StateObject var genfunc = GeneralFunctions()
     @EnvironmentObject var dolarVm: DolarViewModel
+    @State var showAnimation = true
+    
     private let gradientColors = [
         Color.white,
         Color.accentColor.opacity(0.5),
@@ -43,6 +45,7 @@ struct ChartView: View {
                 
                 VStack{
                     ZStack {
+                        
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Material.ultraThin)
                             .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
@@ -87,6 +90,19 @@ struct ChartView: View {
                                 
                         }
                         }
+                        if showAnimation {
+                            ChartAnimationStroke()
+                        }
+                        
+                       
+                    }
+                    .onAppear {
+                        withAnimation(.easeInOut) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                                showAnimation = false
+                            }
+                        }
+                       
                     }
                 
                 }
