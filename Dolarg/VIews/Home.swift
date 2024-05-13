@@ -12,7 +12,7 @@ import Charts
 struct Home: View {
     
     @StateObject var genFunc = GeneralFunctions()
-    @EnvironmentObject var dolarVm : DolarViewModel
+    @ObservedObject var dolarVm : DolarViewModel
     
     var body: some View {
         NavigationStack {
@@ -93,13 +93,18 @@ struct Home: View {
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)){ _ in
             dolarVm.fetchDolar()
         }
+        .onAppear {
+            dolarVm.fetchHistorico()
+            dolarVm.fetchDolar()
+        }
     }
+        
     
         
 }
 
 #Preview {
-    Home()
+    Home(dolarVm: DolarViewModel())
         .environmentObject(DolarViewModel())
        
 }

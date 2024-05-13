@@ -99,7 +99,7 @@ class Scrapper {
     
     
     
-    
+    //MARK: HISTORICO
     func scrapearHistoricoDolar(completed: @escaping(Result<HistoricoModel,NetworkErrors>)-> Void ) {
         
         guard let url = URL(string: historicoUrl) else {
