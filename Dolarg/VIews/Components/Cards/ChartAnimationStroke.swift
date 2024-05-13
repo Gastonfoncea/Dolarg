@@ -18,6 +18,8 @@ struct ChartAnimationStroke: View {
     
     @State var rotation: CGFloat = 0.0
     var tipo : TipoAnimation
+    var gradientRainbow = [Color.red,Color.orange,Color.green,Color.blue,Color.purple,Color.pink]
+    var gradientAccent = [Color.accentColor,Color.blue,Color.red,Color.green,Color.yellow]
     
     var body: some View {
         ZStack {
@@ -25,7 +27,7 @@ struct ChartAnimationStroke: View {
                 RoundedRectangle(cornerRadius: 10)
                     .frame(maxWidth:.infinity)
                     .frame(height: tipo.rawValue)
-                    .foregroundStyle(LinearGradient(gradient: Gradient(colors: [.red,.orange,.green,.blue,.purple,.pink]), startPoint: .top, endPoint: .bottom))
+                    .foregroundStyle(LinearGradient(gradient: Gradient(colors: gradientAccent), startPoint: .top, endPoint: .bottom))
                     .rotationEffect(.degrees(rotation))
                     .mask {
                         //rectangulo del stroke
