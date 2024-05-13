@@ -91,7 +91,7 @@ struct ChartView: View {
                         }
                         }
                         if showAnimation {
-                            ChartAnimationStroke()
+                            ChartAnimationStroke(tipo: .chart)
                         }
                     }
                     .onAppear {

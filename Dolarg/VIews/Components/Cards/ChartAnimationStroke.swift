@@ -7,14 +7,24 @@
 
 import SwiftUI
 
+
+//Enumeramos los casos en que la utilizariamos especificando su height para llamarla desde cualquier lado
+enum TipoAnimation: CGFloat{
+    case chart = 210
+    case card = 70
+}
+
 struct ChartAnimationStroke: View {
+    
     @State var rotation: CGFloat = 0.0
+    var tipo : TipoAnimation
+    
     var body: some View {
         ZStack {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .frame(maxWidth:.infinity)
-                    .frame(height: 210)
+                    .frame(height: tipo.rawValue)
                     .foregroundStyle(LinearGradient(gradient: Gradient(colors: [.red,.orange,.green,.blue,.purple,.pink]), startPoint: .top, endPoint: .bottom))
                     .rotationEffect(.degrees(rotation))
                     .mask {
@@ -22,7 +32,7 @@ struct ChartAnimationStroke: View {
                         RoundedRectangle(cornerRadius: 10, style: .continuous)
                             .stroke(lineWidth: 1.2)
                             .frame(maxWidth:.infinity)
-                            .frame(height: 210)
+                            .frame(height: tipo.rawValue)
                     }
                     .clipped()
                    
@@ -30,7 +40,7 @@ struct ChartAnimationStroke: View {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundStyle(.clear)
         }
-        .frame(height: 210)
+        .frame(height: tipo.rawValue)
         .frame(maxWidth: .infinity)
         .clipped()
         .onAppear {
@@ -44,5 +54,5 @@ struct ChartAnimationStroke: View {
 
 
 #Preview {
-    ChartAnimationStroke()
+    ChartAnimationStroke(tipo: .card)
 }
