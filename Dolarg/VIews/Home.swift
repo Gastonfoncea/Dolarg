@@ -77,6 +77,17 @@ struct Home: View {
                                 } else if let dolarData = dolarVm.dolar {
                                     CardPrincipal(tipoDolar: "Dolar Tarjeta", montoCompra: dolarData.array[21], montoVenta: dolarData.array[22], horaActualizacion: dolarData.actualizacion)
                                 }
+                            
+                                //Dolar Local
+//                            if let dolarDataLocal = dolarVm.dolarLocal {
+//                                CardPrincipal(tipoDolar: "Local", montoCompra: dolarDataLocal.array[0], montoVenta: dolarDataLocal.array[1], horaActualizacion: "en tu cara")
+//                            } else {
+//                                //Text("CTM NO FUNCIONA")
+//                                Text("\(String(describing: dolarVm.dolarLocal))")
+//                                    .foregroundStyle(.white)
+//                            }
+                            
+                                
                         }
                         .padding(.horizontal,15)
                         .padding(.top,50)
@@ -88,6 +99,8 @@ struct Home: View {
         .refreshable {
             dolarVm.fetchHistorico()
             dolarVm.fetchDolar()
+            dolarVm.fetchLocal()
+            
         }
         
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)){ _ in
@@ -96,6 +109,7 @@ struct Home: View {
         .onAppear {
             dolarVm.fetchHistorico()
             dolarVm.fetchDolar()
+            dolarVm.fetchLocal()
         }
     }
         

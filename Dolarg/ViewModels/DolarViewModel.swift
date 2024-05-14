@@ -10,7 +10,7 @@ import Foundation
 
 class DolarViewModel: ObservableObject {
     
-    
+    @Published var dolarLocal: DolarLocalModel?
     @Published var historicoDolar: HistoricoModel?
     @Published var dolar: DolarModel?
     @Published var isLoading = true
@@ -69,6 +69,26 @@ class DolarViewModel: ObservableObject {
                 case .failure(let error):
                     self.error = error
                     print("Error\(error)")
+                }
+            }
+        }
+    }
+    
+    
+    ///FUNCION CREADA LOCAL
+    func fetchLocal() {
+        Scrapper.shared.scrappearLocal() { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    print("no puedo creer")
+                    print(data)
+                    self.dolarLocal = data
+                    print("Lo logramos perra")
+                    
+                case .failure(let error):
+                    self.error = error
+                    print("hemos fracasau")
                 }
             }
         }

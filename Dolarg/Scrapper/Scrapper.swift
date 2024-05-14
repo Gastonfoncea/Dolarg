@@ -17,6 +17,8 @@ class Scrapper {
     var array: [String] = []
     var arrayFechaH = [String]()
     var arrayMontosH = [String]()
+    
+    var arrayLocal: [String] = []
 
     ///FUNCIONES
     func scrappearDolar(completed:@escaping(Result<DolarModel,NetworkErrors>)->Void ) {
@@ -81,7 +83,7 @@ class Scrapper {
                            // print("valor encontrado \(text)")
                             
                         }
-                        //xprint(self.array)
+                       // print(self.array)
                         completed(.success(DolarModel(array: self.array, actualizacion: textActualiacion ?? "Acualizando")))
                
                     } catch {
@@ -172,7 +174,7 @@ class Scrapper {
                             arrayModificado.append(self.arrayMontosH[element])
                             n += 2
                         }
-                       // print("\(self.arrayFechaH)")
+                        // print("\(self.arrayFechaH)")
                         //print("\(arrayModificado)")
                         completed(.success(HistoricoModel(arrayFechas: self.arrayFechaH, arrayMontos: arrayModificado)))
                     } catch {
@@ -187,7 +189,35 @@ class Scrapper {
     }
     
     
-    
+    ///FUNCION CREADA LOCAL
+    //MARK: SRAP LOCAL
+    //realizar una funcion que scrapee localmente a un json que tengamos en la mac, para poder testear las actualizaciones
+    func scrappearLocal(completed: @escaping(Result<DolarLocalModel,NetworkErrors>) -> Void ) {
+        
+        //pasamos los parametros para que busque en el archivo local
+        guard let path = Bundle.main.path(forResource: "data", ofType: "json") else{
+            return
+        }
+        
+        let url2 = URL(fileURLWithPath: path)
+        var dolar: DolarLocalModel?
+        
+        do {
+            let jsonData = try Data(contentsOf: url2)
+            dolar = try JSONDecoder().decode(DolarLocalModel.self, from: jsonData)
+            
+            if let dolar = dolar {
+                //print(dolar)
+                self.arrayLocal = dolar.array
+                print(self.arrayLocal)
+                completed(.success(DolarLocalModel(array: self.arrayLocal)))
+            }
+        } catch {
+            print("error")
+            completed(.failure(.invalidData))
+        }
+       
+    }
     
 }
 
