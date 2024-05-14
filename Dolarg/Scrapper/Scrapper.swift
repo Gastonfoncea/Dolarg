@@ -175,7 +175,7 @@ class Scrapper {
                             n += 2
                         }
                         // print("\(self.arrayFechaH)")
-                        //print("\(arrayModificado)")
+                       // print("ARRAY HISTORICO \(arrayModificado)")
                         completed(.success(HistoricoModel(arrayFechas: self.arrayFechaH, arrayMontos: arrayModificado)))
                     } catch {
                         print("No se recibieron datos")
@@ -209,7 +209,7 @@ class Scrapper {
             if let dolar = dolar {
                 //print(dolar)
                 self.arrayLocal = dolar.array
-                print(self.arrayLocal)
+                //print(self.arrayLocal)
                 completed(.success(DolarLocalModel(array: self.arrayLocal)))
             }
         } catch {

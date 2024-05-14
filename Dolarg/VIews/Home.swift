@@ -11,8 +11,8 @@ import Charts
 
 struct Home: View {
     
-    @StateObject var genFunc = GeneralFunctions()
-    @ObservedObject var dolarVm : DolarViewModel
+    var genFunc = GeneralFunctions()
+    var dolarVm = DolarViewModel()
     
     var body: some View {
         NavigationStack {
@@ -21,95 +21,92 @@ struct Home: View {
                     .ignoresSafeArea(.all)
                 
                 ScrollView {
-                        VStack(spacing:15) {
-                            HStack{
-                                Text("Hola, bienvenido !")
-                                    .foregroundStyle(.white)
-                                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                                    .fontWeight(.semibold)
-                                Spacer()
-                            }
-                            
-                            ChartView()
-                                .padding(.bottom)
-                                HStack{
-                                    Text("Precio dolar hoy !")
-                                        .font(.callout)
-                                        .fontWeight(.medium)
-                                        .foregroundStyle(.white)
-                                    Spacer()
-                                }
-                                
-                            
-                                //Tarjeta dolar Blue
-                                if dolarVm.isLoading{
-                                    DolarCardLoading()
-                                } else if dolarVm.error != nil {
-                                    ContentUnavailableView("Error en la red", systemImage: "network.slash")
-                                } else if let dolarData = dolarVm.dolar {
-                                    CardPrincipal(tipoDolar: "Dolar Blue", montoCompra: dolarData.array[0], montoVenta: dolarData.array[1], horaActualizacion: dolarData.actualizacion)
-                                }
-                                
-                                //Dolar Mep
-                                if dolarVm.isLoading{
-                                    DolarCardLoading()
-                                } else if dolarVm.error != nil {
-                                    ContentUnavailableView("Error en la red", systemImage: "network.slash")
-                                } else if let dolarData = dolarVm.dolar {
-                                    CardPrincipal(tipoDolar: "Dolar Mep", montoCompra: dolarData.array[6], montoVenta: dolarData.array[7], horaActualizacion: dolarData.actualizacion)
-                                }
-                                
-                                
-                                //Dolar Ahorro
-                                if dolarVm.isLoading{
-                                    DolarCardLoading()
-                                } else if dolarVm.error != nil {
-                                    ContentUnavailableView("Error en la red", systemImage: "network.slash")
-                                } else if let dolarData = dolarVm.dolar {
-                                    CardPrincipal(tipoDolar: "Dolar Ahorro", montoCompra: dolarData.array[18], montoVenta: dolarData.array[19], horaActualizacion: dolarData.actualizacion)
-                                }
-                                
-                                //Dolar Tarjeta
-                                if dolarVm.isLoading{
-                                    DolarCardLoading()
-                                } else if dolarVm.error != nil {
-                                    ContentUnavailableView("Error en la red", systemImage: "network.slash")
-                                } else if let dolarData = dolarVm.dolar {
-                                    CardPrincipal(tipoDolar: "Dolar Tarjeta", montoCompra: dolarData.array[21], montoVenta: dolarData.array[22], horaActualizacion: dolarData.actualizacion)
-                                }
-                            
-                                //Dolar Local
-//                            if let dolarDataLocal = dolarVm.dolarLocal {
-//                                CardPrincipal(tipoDolar: "Local", montoCompra: dolarDataLocal.array[0], montoVenta: dolarDataLocal.array[1], horaActualizacion: "en tu cara")
-//                            } else {
-//                                //Text("CTM NO FUNCIONA")
-//                                Text("\(String(describing: dolarVm.dolarLocal))")
-//                                    .foregroundStyle(.white)
-//                            }
-                            
-                                
+                    VStack(spacing:15) {
+                        HStack{
+                            Text("Hola, bienvenido !")
+                                .foregroundStyle(.white)
+                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                .fontWeight(.semibold)
+                            Spacer()
                         }
-                        .padding(.horizontal,15)
-                        .padding(.top,50)
+                        
+                        ChartView(dolarVm: dolarVm)
+                            .onAppear {
+                                dolarVm.fetchHistorico()
+                            }
+                        
+                            .padding(.bottom)
+                        HStack{
+                            Text("Precio dolar hoy !")
+                                .font(.callout)
+                                .fontWeight(.medium)
+                                .foregroundStyle(.white)
+                            Spacer()
+                        }
+                        
+                        
+                        //Tarjeta dolar Blue
+                        if dolarVm.isLoading{
+                            DolarCardLoading()
+                        } else if dolarVm.error != nil {
+                            ContentUnavailableView("Error en la red", systemImage: "network.slash")
+                        } else if let dolarData = dolarVm.dolar {
+                            CardPrincipal(tipoDolar: "Dolar Blue", montoCompra: dolarData.array[0], montoVenta: dolarData.array[1], horaActualizacion: dolarData.actualizacion)
+                        }
+                        
+                        
+                        //Dolar Mep
+                        if dolarVm.isLoading{
+                            DolarCardLoading()
+                        } else if dolarVm.error != nil {
+                            ContentUnavailableView("Error en la red", systemImage: "network.slash")
+                        } else if let dolarData = dolarVm.dolar {
+                            CardPrincipal(tipoDolar: "Dolar Mep", montoCompra: dolarData.array[6], montoVenta: dolarData.array[7], horaActualizacion: dolarData.actualizacion)
+                        }
+                        
+                        
+                        
+                        //Dolar Ahorro
+                        if dolarVm.isLoading{
+                            DolarCardLoading()
+                        } else if dolarVm.error != nil {
+                            ContentUnavailableView("Error en la red", systemImage: "network.slash")
+                        } else if let dolarData = dolarVm.dolar {
+                            CardPrincipal(tipoDolar: "Dolar Ahorro", montoCompra: dolarData.array[18], montoVenta: dolarData.array[19], horaActualizacion: dolarData.actualizacion)
+                        }
+                        
+                        //Dolar Tarjeta
+                        if dolarVm.isLoading{
+                            DolarCardLoading()
+                        } else if dolarVm.error != nil {
+                            ContentUnavailableView("Error en la red", systemImage: "network.slash")
+                        } else if let dolarData = dolarVm.dolar {
+                            CardPrincipal(tipoDolar: "Dolar Tarjeta", montoCompra: dolarData.array[21], montoVenta: dolarData.array[22], horaActualizacion: dolarData.actualizacion)
+                        }
+                        
+                        
+                    }
+                    .padding(.horizontal,15)
+                    .padding(.top,50)
                 }
                 .scrollIndicators(.hidden)
             }
             
         }
         .refreshable {
-            dolarVm.fetchHistorico()
             dolarVm.fetchDolar()
-            dolarVm.fetchLocal()
+            dolarVm.fetchHistorico()
             
         }
         
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)){ _ in
+            
             dolarVm.fetchDolar()
+            
         }
         .onAppear {
-            dolarVm.fetchHistorico()
             dolarVm.fetchDolar()
-            dolarVm.fetchLocal()
+            dolarVm.fetchHistorico()
         }
     }
         
@@ -119,7 +116,7 @@ struct Home: View {
 
 #Preview {
     Home(dolarVm: DolarViewModel())
-        .environmentObject(DolarViewModel())
+       
        
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardPrincipal: View {
     
-    @StateObject var genFunc = GeneralFunctions()
+    var genFunc = GeneralFunctions()
     var tipoDolar: String
     @State var montoCompra: Any
     @State var montoVenta: Any

@@ -10,18 +10,16 @@ import SwiftUI
 @main
 struct DolargApp: App {
     
-    @ObservedObject var dolarVm = DolarViewModel()
+  
     @Environment(\.scenePhase) private var scenePhase
     
     var body: some Scene {
         WindowGroup {
-            Home(dolarVm: dolarVm)
+            Home()
                 .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
                               print("entramos en modo reposo")
                             }
         }
-        .environmentObject(dolarVm)
-        
     }
 }
 

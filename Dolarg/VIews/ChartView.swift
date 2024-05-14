@@ -11,8 +11,8 @@ import Charts
 
 struct ChartView: View {
     
-    @StateObject var genfunc = GeneralFunctions()
-    @EnvironmentObject var dolarVm: DolarViewModel
+    var genfunc = GeneralFunctions()
+    var dolarVm: DolarViewModel
     @State var showAnimation = true
     
     private let gradientColors = [
@@ -28,9 +28,11 @@ struct ChartView: View {
         VStack {
             
             if dolarVm.isLoadingHistorico {
-                ChartLoading()
+              ChartLoading()
+                
             } else if dolarVm.errorH != nil {
                 ContentUnavailableView("Error en la red", systemImage: "network.slash")
+                
             } else if let dolarHistoricoData = dolarVm.historicoDolar {
                 
                 let data = [
@@ -109,13 +111,10 @@ struct ChartView: View {
         }
         .frame(height: 210)
         .frame(maxWidth:.infinity)
-        .onAppear {
-            dolarVm.fetchHistorico()
-        }
+
     }
 }
 
 #Preview {
-    ChartView()
-        .environmentObject(DolarViewModel())
+    ChartView(dolarVm: DolarViewModel())
 }
