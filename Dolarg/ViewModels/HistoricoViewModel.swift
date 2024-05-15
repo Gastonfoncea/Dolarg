@@ -15,8 +15,8 @@ class HistoricoViewModel:ObservableObject {
     
     
     func fetchHistorico() {
-       // print("scrapeando Historico")
-        Scrapper.shared.scrapearHistoricoDolar() {result in
+        print("scrapeando Historico")
+        ScrapHistorico.shared.scrapearHistoricoDolar() {result in
             DispatchQueue.main.async {
                 self.isLoadingHistorico = false
                 

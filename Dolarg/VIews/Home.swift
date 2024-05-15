@@ -13,7 +13,7 @@ struct Home: View {
     
     var genFunc = GeneralFunctions()
     @ObservedObject var dolarVm = DolarViewModel()
-    @ObservedObject var historicoVm = HistoricoViewModel()
+    @StateObject var historicoVm = HistoricoViewModel()
     
     
     var body: some View {
@@ -107,7 +107,7 @@ struct Home: View {
         .onAppear {
             
             dolarVm.fetchDolar()
-            historicoVm.fetchHistorico()
+           // historicoVm.fetchHistorico()
         }
     }
         

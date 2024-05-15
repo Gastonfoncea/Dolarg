@@ -39,7 +39,7 @@ struct ChartLoading: View {
         .onAppear{
             withAnimation(Animation.linear.speed(0.35).delay(0)
                 .repeatForever(autoreverses: false)){
-                    self.show = true
+                    self.show.toggle()
                 }
         }
 

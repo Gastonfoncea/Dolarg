@@ -55,7 +55,7 @@ struct ChartView: View {
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(LinearGradient(colors: gradientColors, startPoint: .topTrailing, endPoint: .bottomLeading))
                             }
-                            
+                        
                         VStack {
                             HStack{
                                 Text("Ultimas cotizaciones blue")
@@ -90,7 +90,7 @@ struct ChartView: View {
                                 plotContent
                                     .foregroundStyle(Color.colorText1)
                                 
-                        }
+                            }
                         }
                         if showAnimation {
                             ChartAnimationStroke(tipo: .chart)
@@ -102,15 +102,18 @@ struct ChartView: View {
                                 showAnimation = false
                             }
                         }
-                       
+                        
                     }
-                
+                    
                 }
             }
             
         }
         .frame(height: 210)
         .frame(maxWidth:.infinity)
+        .onAppear {
+            historicoVm.fetchHistorico()
+        }
 
     }
 }
