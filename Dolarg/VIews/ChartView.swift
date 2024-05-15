@@ -12,7 +12,7 @@ import Charts
 struct ChartView: View {
     
     var genfunc = GeneralFunctions()
-    var dolarVm: DolarViewModel
+    @ObservedObject var historicoVm: HistoricoViewModel
     @State var showAnimation = true
     
     private let gradientColors = [
@@ -27,13 +27,13 @@ struct ChartView: View {
     var body: some View {
         VStack {
             
-            if dolarVm.isLoadingHistorico {
+            if historicoVm.isLoadingHistorico {
               ChartLoading()
                 
-            } else if dolarVm.errorH != nil {
+            } else if historicoVm.error != nil {
                 ContentUnavailableView("Error en la red", systemImage: "network.slash")
                 
-            } else if let dolarHistoricoData = dolarVm.historicoDolar {
+            } else if let dolarHistoricoData = historicoVm.historicoDolar {
                 
                 let data = [
                     DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[6]) , monto:Int("\(dolarHistoricoData.arrayMontos[6])")!),
@@ -116,5 +116,5 @@ struct ChartView: View {
 }
 
 #Preview {
-    ChartView(dolarVm: DolarViewModel())
+    ChartView(historicoVm: HistoricoViewModel())
 }

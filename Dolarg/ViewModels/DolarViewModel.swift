@@ -9,16 +9,14 @@ import Foundation
 import Observation
 
 
-@Observable class DolarViewModel {
+class DolarViewModel: ObservableObject {
     
-    //var dolarLocal: DolarLocalModel?
-    var historicoDolar: HistoricoModel?
-    var dolar: DolarModel?
-    var isLoading = true
-    var isLoadingHistorico = true
-    var error: Error?
-    var errorH: Error?
-    private var timer: Timer?
+
+
+    @Published var dolar: DolarModel?
+    @Published var isLoading = true
+    @Published var error: Error?
+    @Published private var timer: Timer?
     
     
     //inicializamos el timer con la funcion fetch dolar para que realice la peticion cada 300 segundos, a su vez la llamamos como weak Self para que no haga una fuga de memoria
@@ -54,27 +52,6 @@ import Observation
             
         }
         
-        
-        
-        func fetchHistorico() {
-           // print("scrapeando Historico")
-            Scrapper.shared.scrapearHistoricoDolar() {result in
-                DispatchQueue.main.async {
-                    self.isLoadingHistorico = false
-                    
-                    switch result {
-                    case .success(let data):
-                        print("Entro en el historico")
-                        self.historicoDolar = data
-                        
-                    case .failure(let error):
-                        self.error = error
-                        print("Error\(error)")
-                    }
-                }
-            }
-        }
-    
     
     ///FUNCION CREADA LOCAL
     /*

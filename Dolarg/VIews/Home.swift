@@ -12,7 +12,9 @@ import Charts
 struct Home: View {
     
     var genFunc = GeneralFunctions()
-    var dolarVm = DolarViewModel()
+    @ObservedObject var dolarVm = DolarViewModel()
+    @ObservedObject var historicoVm = HistoricoViewModel()
+    
     
     var body: some View {
         NavigationStack {
@@ -30,10 +32,8 @@ struct Home: View {
                             Spacer()
                         }
                         
-                        ChartView(dolarVm: dolarVm)
-                            .onAppear {
-                                dolarVm.fetchHistorico()
-                            }
+                        ChartView(historicoVm: historicoVm)
+                            
                         
                             .padding(.bottom)
                         HStack{
@@ -95,7 +95,7 @@ struct Home: View {
         }
         .refreshable {
             dolarVm.fetchDolar()
-            dolarVm.fetchHistorico()
+            historicoVm.fetchHistorico()
             
         }
         
@@ -105,8 +105,9 @@ struct Home: View {
             
         }
         .onAppear {
+            
             dolarVm.fetchDolar()
-            dolarVm.fetchHistorico()
+            historicoVm.fetchHistorico()
         }
     }
         
@@ -115,7 +116,7 @@ struct Home: View {
 }
 
 #Preview {
-    Home(dolarVm: DolarViewModel())
+    Home()
        
        
 }
