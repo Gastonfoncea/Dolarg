@@ -11,9 +11,9 @@ import Charts
 
 struct ChartView: View {
     
-    @StateObject var genfunc = GeneralFunctions()
-    @EnvironmentObject var dolarVm: DolarViewModel
+    var genfunc = GeneralFunctions()
     @State var showAnimation = true
+    var dolarHistoricoData: HistoricoModel
     
     private let gradientColors = [
         Color.white,
@@ -26,13 +26,6 @@ struct ChartView: View {
     
     var body: some View {
         VStack {
-            
-            if dolarVm.isLoadingHistorico {
-                ChartLoading()
-            } else if dolarVm.errorH != nil {
-                ContentUnavailableView("Error en la red", systemImage: "network.slash")
-            } else if let dolarHistoricoData = dolarVm.historicoDolar {
-                
                 let data = [
                     DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[6]) , monto:Int("\(dolarHistoricoData.arrayMontos[6])")!),
                     DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[5]) , monto:Int("\(dolarHistoricoData.arrayMontos[5])")!),
@@ -53,7 +46,7 @@ struct ChartView: View {
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(LinearGradient(colors: gradientColors, startPoint: .topTrailing, endPoint: .bottomLeading))
                             }
-                            
+                        
                         VStack {
                             HStack{
                                 Text("Ultimas cotizaciones blue")
@@ -88,34 +81,31 @@ struct ChartView: View {
                                 plotContent
                                     .foregroundStyle(Color.colorText1)
                                 
-                        }
-                        }
-                        if showAnimation {
-                            ChartAnimationStroke()
-                        }
-                    }
-                    .onAppear {
-                        withAnimation(.smooth) {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-                                showAnimation = false
                             }
                         }
-                       
+//                        if showAnimation {
+//                            ChartAnimationStroke(tipo: .chart)
+//                        }
                     }
-                
+//                    .onAppear {
+//                        withAnimation(.smooth) {
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+//                                showAnimation = false
+//                            }
+//                        }
+//                        
+//                    }
+                    
                 }
-            }
+            
             
         }
         .frame(height: 210)
         .frame(maxWidth:.infinity)
-        .onAppear {
-            dolarVm.fetchHistorico()
-        }
+
     }
 }
 
 #Preview {
-    ChartView()
-        .environmentObject(DolarViewModel())
+    ChartView(dolarHistoricoData: HistoricoModel.init(arrayFechas: ["","","","","","","","","","","",""], arrayMontos: ["","","","","","","","","","","",""]))
 }

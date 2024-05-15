@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Observation
 
 
-class GeneralFunctions: ObservableObject {
+@Observable class GeneralFunctions {
     
     //Funciones que usaremos en toda la app
     
