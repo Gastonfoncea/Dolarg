@@ -10,7 +10,6 @@ import SwiftUI
 @main
 struct DolargApp: App {
     
-  
     @Environment(\.scenePhase) private var scenePhase
     
     var body: some Scene {

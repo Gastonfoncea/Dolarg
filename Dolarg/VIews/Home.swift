@@ -13,8 +13,7 @@ struct Home: View {
     
     var genFunc = GeneralFunctions()
     @ObservedObject var dolarVm = DolarViewModel()
-    @StateObject var historicoVm = HistoricoViewModel()
-    
+    @ObservedObject var historicoVm = HistoricoViewModel()
     
     var body: some View {
         NavigationStack {
@@ -32,10 +31,18 @@ struct Home: View {
                             Spacer()
                         }
                         
-                        ChartView(historicoVm: historicoVm)
-                            
+                        //CHART
+                        if historicoVm.isLoadingHistorico {
+                            ChartLoading()
+                                .padding(.bottom)
+                        } else if historicoVm.error != nil {
+                            ContentUnavailableView("Error en la red", systemImage: "network.slash")
+                        } else if let dolarHistoricoData = historicoVm.historicoDolar {
+                            ChartView(dolarHistoricoData: dolarHistoricoData)
+                                .padding(.bottom)
+                        }
                         
-                            .padding(.bottom)
+
                         HStack{
                             Text("Precio dolar hoy !")
                                 .font(.callout)
@@ -83,8 +90,7 @@ struct Home: View {
                         } else if let dolarData = dolarVm.dolar {
                             CardPrincipal(tipoDolar: "Dolar Tarjeta", montoCompra: dolarData.array[21], montoVenta: dolarData.array[22], horaActualizacion: dolarData.actualizacion)
                         }
-                        
-                        
+ 
                     }
                     .padding(.horizontal,15)
                     .padding(.top,50)
@@ -96,29 +102,17 @@ struct Home: View {
         .refreshable {
             dolarVm.fetchDolar()
             historicoVm.fetchHistorico()
-            
-        }
-        
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)){ _ in
-            
-            dolarVm.fetchDolar()
-            
         }
         .onAppear {
-            
             dolarVm.fetchDolar()
-           // historicoVm.fetchHistorico()
+            historicoVm.fetchHistorico()
         }
     }
-        
-    
         
 }
 
 #Preview {
     Home()
-       
-       
 }
 
 

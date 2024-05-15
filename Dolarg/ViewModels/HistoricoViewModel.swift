@@ -12,6 +12,19 @@ class HistoricoViewModel:ObservableObject {
     @Published var isLoadingHistorico = true
     @Published var historicoDolar: HistoricoModel?
     @Published var error: Error?
+    @Published private var timer: Timer?
+    
+    init() {
+        timer = Timer.scheduledTimer(withTimeInterval: 300, repeats: true) { [weak self] _ in
+            self?.fetchHistorico()
+        }
+        fetchHistorico()
+    }
+    
+    // Detener el temporizador cuando se destruya el ViewModel para evitar fugas de memoria
+    deinit {
+        timer?.invalidate()
+    }
     
     
     func fetchHistorico() {

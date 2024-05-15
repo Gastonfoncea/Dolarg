@@ -14,9 +14,10 @@ struct DolarCardLoading: View {
     
     var body: some View {
         ZStack{
-            Color.black.opacity(0.9)
+           RoundedRectangle(cornerRadius: 10)
+                .fill(Material.ultraThin)
                 .frame(height: 70)
-                .cornerRadius(10)
+               
             
             
             Color.white
@@ -37,7 +38,7 @@ struct DolarCardLoading: View {
         .frame(maxWidth: .infinity)
         .frame(height: 70)
         .onAppear{
-            withAnimation(Animation.linear.speed(0.35).delay(0)
+            withAnimation(Animation.linear.speed(0.40).delay(0)
                 .repeatForever(autoreverses: false)){
                     self.show.toggle()
                 }

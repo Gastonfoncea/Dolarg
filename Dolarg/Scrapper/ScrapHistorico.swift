@@ -12,9 +12,9 @@ class ScrapHistorico {
     
     static let shared = ScrapHistorico() //Singleton
     let historicoUrl = "https://www.bloomberglinea.com/mercados/argentina/dolar-blue-hoy/"
-    var arrayFechaH = [String]()
-    var arrayMontosH = [String]()
-    var arrayModificado = [String]()
+    var arrayFechaH: [String] = []
+    var arrayMontosH: [String] = []
+    var arrayModificado: [String] = []
     
     //MARK: HISTORICO
     func scrapearHistoricoDolar(completed: @escaping(Result<HistoricoModel,NetworkErrors>)-> Void ) {

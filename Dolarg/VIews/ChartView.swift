@@ -12,8 +12,8 @@ import Charts
 struct ChartView: View {
     
     var genfunc = GeneralFunctions()
-    @ObservedObject var historicoVm: HistoricoViewModel
     @State var showAnimation = true
+    var dolarHistoricoData: HistoricoModel
     
     private let gradientColors = [
         Color.white,
@@ -26,15 +26,6 @@ struct ChartView: View {
     
     var body: some View {
         VStack {
-            
-            if historicoVm.isLoadingHistorico {
-              ChartLoading()
-                
-            } else if historicoVm.error != nil {
-                ContentUnavailableView("Error en la red", systemImage: "network.slash")
-                
-            } else if let dolarHistoricoData = historicoVm.historicoDolar {
-                
                 let data = [
                     DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[6]) , monto:Int("\(dolarHistoricoData.arrayMontos[6])")!),
                     DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[5]) , monto:Int("\(dolarHistoricoData.arrayMontos[5])")!),
@@ -92,32 +83,29 @@ struct ChartView: View {
                                 
                             }
                         }
-                        if showAnimation {
-                            ChartAnimationStroke(tipo: .chart)
-                        }
+//                        if showAnimation {
+//                            ChartAnimationStroke(tipo: .chart)
+//                        }
                     }
-                    .onAppear {
-                        withAnimation(.smooth) {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-                                showAnimation = false
-                            }
-                        }
-                        
-                    }
+//                    .onAppear {
+//                        withAnimation(.smooth) {
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+//                                showAnimation = false
+//                            }
+//                        }
+//                        
+//                    }
                     
                 }
-            }
+            
             
         }
         .frame(height: 210)
         .frame(maxWidth:.infinity)
-        .onAppear {
-            historicoVm.fetchHistorico()
-        }
 
     }
 }
 
 #Preview {
-    ChartView(historicoVm: HistoricoViewModel())
+    ChartView(dolarHistoricoData: HistoricoModel.init(arrayFechas: ["","","","","","","","","","","",""], arrayMontos: ["","","","","","","","","","","",""]))
 }
