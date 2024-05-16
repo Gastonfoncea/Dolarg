@@ -16,9 +16,9 @@ struct ColorBackGround: View {
             .foregroundStyle(.clear)
             .background {
                 LinearGradient(colors: [Color.accentColor,Color.black], startPoint: .topTrailing, endPoint: .leading)
-                    .hueRotation(.degrees(animateGradient ? 30 : 0))
+                    .hueRotation(.degrees(animateGradient ? 40 : 0))
                     .onAppear{
-                        withAnimation(.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
+                        withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses: true)) {
                             animateGradient.toggle()
                         }
                     }

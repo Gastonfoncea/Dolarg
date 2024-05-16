@@ -29,7 +29,7 @@ import Observation
         if let date = dateFormatter.date(from: time) {
             
             let timeFormatter = DateFormatter()
-            timeFormatter.dateFormat = "HH:mm"
+            timeFormatter.dateFormat = "dd/MM HH:mm"
             
             let timeString = timeFormatter.string(from: date)
             return timeString
@@ -84,6 +84,8 @@ import Observation
         formatter.dateFormat = "dd/MM/yyyy"
         return formatter.string(from: Date())
     }
+    
+    
     
     
 }
