@@ -34,24 +34,24 @@ struct CardPrincipal: View {
                         .stroke(LinearGradient(colors: gradientColors, startPoint: .top, endPoint: .bottom))
                 }
             
-            HStack{
-                VStack(alignment: .leading,spacing: 5){
+            HStack {
+                VStack(alignment:.leading,spacing: 5){
                    
                     Text("\(tipoDolar.capitalized)")
                         .font(.headline)
                         .bold()
                         .foregroundStyle(Color.white)
-                    Text("Ult Vez \(genFunc.DateTimeActualizado(time: horaActualizacion)) hs")
+                    
+                    Text("\(genFunc.DateTimeActualizado(time: horaActualizacion))")
                         .font(.footnote)
                         .foregroundStyle(Color.accentColor)
-                        
-//                    Text("03/05 - 17:11")
-//                        .font(.footnote)
+
                 }
+                .frame(width: 125,alignment: .leading)
                 Spacer()
                 
                 HStack{
-                    Spacer()
+                   // Spacer()
                     VStack(alignment:.leading,spacing: 5){
                       
                         Text("Compra")
@@ -87,6 +87,7 @@ struct CardPrincipal: View {
                 }
             }
             .padding(.leading)
+            
         }
         .frame(maxWidth: .infinity)
         .frame(height: 70)
@@ -96,7 +97,7 @@ struct CardPrincipal: View {
 }
 
 #Preview {
-    CardPrincipal(tipoDolar: "blue",montoCompra: 930, montoVenta: 940, horaActualizacion: "hora actualizada")
+    CardPrincipal(tipoDolar: "Dolar Ahorro ",montoCompra: 930, montoVenta: 940, horaActualizacion: "15/05 18:00")
 }
 
 

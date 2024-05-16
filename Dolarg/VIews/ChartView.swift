@@ -54,8 +54,13 @@ struct ChartView: View {
                                     .fontWeight(.regular)
                                     .foregroundStyle(.white)
                                 Spacer()
+                                Text("\(genfunc.diaEnCurso())")
+                                    .font(.footnote)
+                                    .fontWeight(.regular)
+                                    .foregroundStyle(Color.colorText1)
                             }
                             .padding(.leading,20)
+                            .padding(.trailing,20)
                             Chart {
                                 ForEach(data) { d in
                                     BarMark(x: PlottableValue.value("Dias", d.fecha), y: .value("Precios", d.monto))
