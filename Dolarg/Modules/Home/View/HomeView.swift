@@ -10,14 +10,11 @@ import SwiftSoup
 import Charts
 
 struct HomeView: View {
-    
-//    var genFunc = GeneralFunctions()
-    @ObservedObject private var viewModel: HomeViewModel
     /**
      En MVVM, el View solo puede tener un solo ViewModel
      */
-//    @ObservedObject var dolarVm = DolarViewModel()
-//    @ObservedObject var historicoVm = HistoricoViewModel()
+    @ObservedObject private var viewModel: HomeViewModel
+    
     
     init() {
         viewModel = HomeViewModel()
