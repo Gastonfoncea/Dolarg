@@ -9,10 +9,9 @@ import SwiftUI
 
 struct CardPrincipal: View {
     
-    var genFunc = GeneralFunctions()
     var tipoDolar: String
-    @State var montoCompra: Any
-    @State var montoVenta: Any
+    @State var montoCompra: String
+    @State var montoVenta: String
     @State var horaActualizacion: String
     private let gradientColors = [
         Color.white.opacity(0.8),
@@ -41,7 +40,7 @@ struct CardPrincipal: View {
                         .font(.headline)
                         .bold()
                         .foregroundStyle(Color.white)
-                    Text("Ult Vez \(genFunc.DateTimeActualizado(time: horaActualizacion)) hs")
+                    Text("Ult Vez \(horaActualizacion.DateTimeActualizado()) hs")
                         .font(.footnote)
                         .foregroundStyle(Color.accentColor)
                         
@@ -96,7 +95,7 @@ struct CardPrincipal: View {
 }
 
 #Preview {
-    CardPrincipal(tipoDolar: "blue",montoCompra: 930, montoVenta: 940, horaActualizacion: "hora actualizada")
+    CardPrincipal(tipoDolar: "blue",montoCompra: "930", montoVenta: "940", horaActualizacion: "hora actualizada")
 }
 
 

@@ -8,8 +8,6 @@
 import Foundation
 
 struct DolarModel {
-
-    var array: [Any]
+    var array: [String]
     var actualizacion: String
-      
 }

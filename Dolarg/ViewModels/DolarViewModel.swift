@@ -13,7 +13,7 @@ class DolarViewModel: ObservableObject {
     
 
 
-    @Published var dolar: DolarModel?
+//    @Published var dolar: DolarModel?
     @Published var isLoading = true
     @Published var error: Error?
     @Published private var timer: Timer?
@@ -40,7 +40,8 @@ class DolarViewModel: ObservableObject {
                     
                     switch result {
                     case .success(let data):
-                        self.dolar = data
+                        break
+//                        self.dolar = data
                         
                     case .failure(let error):
                         self.error = error
