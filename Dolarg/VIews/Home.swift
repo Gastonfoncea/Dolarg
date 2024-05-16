@@ -14,7 +14,7 @@ struct Home: View {
     var genFunc = GeneralFunctions()
     @ObservedObject var dolarVm = DolarViewModel()
     @ObservedObject var historicoVm = HistoricoViewModel()
-   
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -109,7 +109,6 @@ struct Home: View {
             historicoVm.fetchHistorico()
         }
     }
-        
 }
 
 #Preview {
