@@ -14,10 +14,10 @@ struct DolargApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Home()
-                .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
-                              print("entramos en modo reposo")
-                            }
+            HomeView()
+//                .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
+//                              print("entramos en modo reposo")
+//                            }
         }
     }
 }

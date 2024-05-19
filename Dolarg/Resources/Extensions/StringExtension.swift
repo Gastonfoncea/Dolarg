@@ -1,18 +1,13 @@
 //
-//  GeneralFunctions.swift
+//  StringExtension.swift
 //  Dolarg
 //
-//  Created by Gaston Foncea on 03/05/2024.
+//  Created by Guimel Moreno on 15/05/24.
 //
 
 import Foundation
-import Observation
 
-
-@Observable class GeneralFunctions {
-    
-    //Funciones que usaremos en toda la app
-    
+extension String {
     func AnyToInt(dato: Any) -> Int {
         if let intValue = dato as? Int {
             return intValue
@@ -21,12 +16,12 @@ import Observation
         }
     }
     
-    func DateTimeActualizado(time:String) -> String {
+    func DateTimeActualizado() -> String {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         
-        if let date = dateFormatter.date(from: time) {
+        if let date = dateFormatter.date(from: self) {
             
             let timeFormatter = DateFormatter()
             timeFormatter.dateFormat = "dd/MM HH:mm"
@@ -41,13 +36,13 @@ import Observation
     }
     
     //de 2024-04-06 a 06-04
-    func formaterTimeChart(fecha: String) -> String {
+    func formaterTimeChart() -> String {
         
         let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "yyyy-MM-dd" //formato de entrada
         
-        if let date = dateFormatter.date(from: fecha) {
+        if let date = dateFormatter.date(from: self) {
             
             dateFormatter.dateFormat = "dd-MM" //formato de salida
             
@@ -57,6 +52,7 @@ import Observation
             return "error"
         }
     }
+    
     
     func separadorDeMil(num: Int) -> String {
         let formatter = NumberFormatter()
@@ -84,7 +80,6 @@ import Observation
         formatter.dateFormat = "dd/MM/yyyy"
         return formatter.string(from: Date())
     }
-    
     
     
     

@@ -11,7 +11,7 @@ import Charts
 
 struct ChartView: View {
     
-    var genfunc = GeneralFunctions()
+//    var genfunc = GeneralFunctions()
     @State var showAnimation = true
     @State var dolarHistoricoData: HistoricoModel
     
@@ -27,13 +27,13 @@ struct ChartView: View {
     var body: some View {
         VStack {
                 let data = [
-                    DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[6]) , monto:Int("\(dolarHistoricoData.arrayMontos[6])")!),
-                    DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[5]) , monto:Int("\(dolarHistoricoData.arrayMontos[5])")!),
-                    DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[4]) , monto:Int("\(dolarHistoricoData.arrayMontos[4])")!),
-                    DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[3]) , monto:Int("\(dolarHistoricoData.arrayMontos[3])")!),
-                    DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[2]) , monto:Int("\(dolarHistoricoData.arrayMontos[2])")!),
-                    DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[1]) , monto:Int("\(dolarHistoricoData.arrayMontos[1])")!),
-                    DolarChartModel(fecha: genfunc.formaterTimeChart(fecha: dolarHistoricoData.arrayFechas[0]) , monto:Int("\(dolarHistoricoData.arrayMontos[0])")!),
+                    DolarChartModel(fecha: dolarHistoricoData.arrayFechas[6].formaterTimeChart(), monto:Int("\(dolarHistoricoData.arrayMontos[6])")!),
+                    DolarChartModel(fecha: dolarHistoricoData.arrayFechas[5].formaterTimeChart(), monto:Int("\(dolarHistoricoData.arrayMontos[5])")!),
+                    DolarChartModel(fecha:  dolarHistoricoData.arrayFechas[4].formaterTimeChart() , monto:Int("\(dolarHistoricoData.arrayMontos[4])")!),
+                    DolarChartModel(fecha:  dolarHistoricoData.arrayFechas[3].formaterTimeChart() , monto:Int("\(dolarHistoricoData.arrayMontos[3])")!),
+                    DolarChartModel(fecha:  dolarHistoricoData.arrayFechas[2].formaterTimeChart() , monto:Int("\(dolarHistoricoData.arrayMontos[2])")!),
+                    DolarChartModel(fecha:  dolarHistoricoData.arrayFechas[1].formaterTimeChart() , monto:Int("\(dolarHistoricoData.arrayMontos[1])")!),
+                    DolarChartModel(fecha:  dolarHistoricoData.arrayFechas[0].formaterTimeChart() , monto:Int("\(dolarHistoricoData.arrayMontos[0])")!),
                 ]
                 
                 VStack{
@@ -54,10 +54,10 @@ struct ChartView: View {
                                     .fontWeight(.regular)
                                     .foregroundStyle(.white)
                                 Spacer()
-                                Text("\(genfunc.diaEnCurso())")
-                                    .font(.footnote)
-                                    .fontWeight(.regular)
-                                    .foregroundStyle(Color.colorText1)
+//                                Text("\(genfunc.diaEnCurso())")
+//                                    .font(.footnote)
+//                                    .fontWeight(.regular)
+//                                    .foregroundStyle(Color.colorText1)
                             }
                             .padding(.leading,20)
                             .padding(.trailing,20)
@@ -65,7 +65,7 @@ struct ChartView: View {
                                 ForEach(data) { d in
                                     BarMark(x: PlottableValue.value("Dias", d.fecha), y: .value("Precios", d.monto))
                                         .annotation {
-                                            Text(String(genfunc.separadorDeMil(num: d.monto)))
+                                            Text(d.monto.separadorDeMil())
                                                 .font(.caption)
                                                 .foregroundStyle(Color.colorText1)
                                         }

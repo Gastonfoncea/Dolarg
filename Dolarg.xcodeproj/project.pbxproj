@@ -7,9 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17823A0A2BF5A18F00EE4714 /* HistoricoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5158CE012BE6B9D100C963EA /* HistoricoModel.swift */; };
+		17823A0B2BF5A18F00EE4714 /* CardPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB622BE2FA3000667FB4 /* CardPrincipal.swift */; };
+		17823A0D2BF5A18F00EE4714 /* Scrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB682BE43CBE00667FB4 /* Scrapper.swift */; };
+		17823A0E2BF5A18F00EE4714 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB522BE2F19900667FB4 /* HomeView.swift */; };
+		17823A0F2BF5A18F00EE4714 /* DolarChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5158CE052BE9825D00C963EA /* DolarChartModel.swift */; };
+		17823A112BF5A18F00EE4714 /* DolarCardLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C4542E2BE5794F00B4D13B /* DolarCardLoading.swift */; };
+		17823A122BF5A18F00EE4714 /* ScrapHistorico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103F7AF2BF4587F009B11ED /* ScrapHistorico.swift */; };
+		17823A132BF5A18F00EE4714 /* DolarEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C454272BE481CE00B4D13B /* DolarEnum.swift */; };
+		17823A142BF5A18F00EE4714 /* WhiteCardBackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E506BF2BEC231F0002FFC6 /* WhiteCardBackGround.swift */; };
+		17823A152BF5A18F00EE4714 /* ChartAnimationStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5199EE3F2BF018A300B5BABD /* ChartAnimationStroke.swift */; };
+		17823A162BF5A18F00EE4714 /* DolarLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103F7A52BF2D765009B11ED /* DolarLocalModel.swift */; };
+		17823A182BF5A18F00EE4714 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5158CDFF2BE6ABF200C963EA /* ChartView.swift */; };
+		17823A192BF5A18F00EE4714 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C4542C2BE5723A00B4D13B /* NetworkErrors.swift */; };
+		17823A1A2BF5A18F00EE4714 /* DolarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C454242BE4810A00B4D13B /* DolarModel.swift */; };
+		17823A1B2BF5A18F00EE4714 /* DolargApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB502BE2F19900667FB4 /* DolargApp.swift */; };
+		17823A1C2BF5A18F00EE4714 /* ChartLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CEB9B2BEAFAD8005144E7 /* ChartLoading.swift */; };
+		17823A1D2BF5A18F00EE4714 /* ColorBackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E506C12BEC23490002FFC6 /* ColorBackGround.swift */; };
+		17823A1F2BF5A18F00EE4714 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 17823A072BF5A18F00EE4714 /* SwiftSoup */; };
+		17823A212BF5A18F00EE4714 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51C3FB572BE2F19B00667FB4 /* Preview Assets.xcassets */; };
+		17823A222BF5A18F00EE4714 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5103F7A32BF2D1E6009B11ED /* data.json */; };
+		17823A232BF5A18F00EE4714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51C3FB542BE2F19B00667FB4 /* Assets.xcassets */; };
+		17823A2C2BF5A50500EE4714 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17823A2B2BF5A50500EE4714 /* HomeViewModel.swift */; };
+		17823A302BF5A6A100EE4714 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17823A2B2BF5A50500EE4714 /* HomeViewModel.swift */; };
+		17823A342BF5BFEB00EE4714 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17823A332BF5BFEB00EE4714 /* StringExtension.swift */; };
+		17823A352BF5BFEB00EE4714 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17823A332BF5BFEB00EE4714 /* StringExtension.swift */; };
+		17823A382BF5C26A00EE4714 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17823A372BF5C26A00EE4714 /* IntExtension.swift */; };
+		17823A392BF5C26A00EE4714 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17823A372BF5C26A00EE4714 /* IntExtension.swift */; };
 		5103F7A42BF2D1E6009B11ED /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5103F7A32BF2D1E6009B11ED /* data.json */; };
 		5103F7A62BF2D765009B11ED /* DolarLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103F7A52BF2D765009B11ED /* DolarLocalModel.swift */; };
-		5103F7AE2BF45502009B11ED /* HistoricoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103F7AD2BF45502009B11ED /* HistoricoViewModel.swift */; };
 		5103F7B02BF4587F009B11ED /* ScrapHistorico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103F7AF2BF4587F009B11ED /* ScrapHistorico.swift */; };
 		5103F7B22BF57863009B11ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5103F7B12BF57863009B11ED /* LaunchScreen.storyboard */; };
 		5158CE002BE6ABF200C963EA /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5158CDFF2BE6ABF200C963EA /* ChartView.swift */; };
@@ -18,7 +44,7 @@
 		5199EE402BF018A300B5BABD /* ChartAnimationStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5199EE3F2BF018A300B5BABD /* ChartAnimationStroke.swift */; };
 		519CEB9C2BEAFAD9005144E7 /* ChartLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CEB9B2BEAFAD8005144E7 /* ChartLoading.swift */; };
 		51C3FB512BE2F19900667FB4 /* DolargApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB502BE2F19900667FB4 /* DolargApp.swift */; };
-		51C3FB532BE2F19900667FB4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB522BE2F19900667FB4 /* Home.swift */; };
+		51C3FB532BE2F19900667FB4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB522BE2F19900667FB4 /* HomeView.swift */; };
 		51C3FB552BE2F19B00667FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51C3FB542BE2F19B00667FB4 /* Assets.xcassets */; };
 		51C3FB582BE2F19B00667FB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51C3FB572BE2F19B00667FB4 /* Preview Assets.xcassets */; };
 		51C3FB632BE2FA3000667FB4 /* CardPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB622BE2FA3000667FB4 /* CardPrincipal.swift */; };
@@ -26,18 +52,19 @@
 		51C3FB692BE43CBE00667FB4 /* Scrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3FB682BE43CBE00667FB4 /* Scrapper.swift */; };
 		51C454252BE4810A00B4D13B /* DolarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C454242BE4810A00B4D13B /* DolarModel.swift */; };
 		51C454282BE481CE00B4D13B /* DolarEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C454272BE481CE00B4D13B /* DolarEnum.swift */; };
-		51C4542B2BE4838500B4D13B /* DolarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C4542A2BE4838500B4D13B /* DolarViewModel.swift */; };
 		51C4542D2BE5723A00B4D13B /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C4542C2BE5723A00B4D13B /* NetworkErrors.swift */; };
 		51C4542F2BE5794F00B4D13B /* DolarCardLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C4542E2BE5794F00B4D13B /* DolarCardLoading.swift */; };
-		51C454312BE57F1400B4D13B /* GeneralFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C454302BE57F1400B4D13B /* GeneralFunctions.swift */; };
 		51E506C02BEC231F0002FFC6 /* WhiteCardBackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E506BF2BEC231F0002FFC6 /* WhiteCardBackGround.swift */; };
 		51E506C22BEC23490002FFC6 /* ColorBackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E506C12BEC23490002FFC6 /* ColorBackGround.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17823A272BF5A18F00EE4714 /* Dolarg_GMC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dolarg_GMC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17823A2B2BF5A50500EE4714 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		17823A332BF5BFEB00EE4714 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		17823A372BF5C26A00EE4714 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		5103F7A32BF2D1E6009B11ED /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = Dolarg/Scrapper/data.json; sourceTree = SOURCE_ROOT; };
 		5103F7A52BF2D765009B11ED /* DolarLocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolarLocalModel.swift; sourceTree = "<group>"; };
-		5103F7AD2BF45502009B11ED /* HistoricoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricoViewModel.swift; sourceTree = "<group>"; };
 		5103F7AF2BF4587F009B11ED /* ScrapHistorico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapHistorico.swift; sourceTree = "<group>"; };
 		5103F7B12BF57863009B11ED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5158CDFF2BE6ABF200C963EA /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
@@ -47,22 +74,28 @@
 		519CEB9B2BEAFAD8005144E7 /* ChartLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLoading.swift; sourceTree = "<group>"; };
 		51C3FB4D2BE2F19900667FB4 /* Dolarg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dolarg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C3FB502BE2F19900667FB4 /* DolargApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolargApp.swift; sourceTree = "<group>"; };
-		51C3FB522BE2F19900667FB4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		51C3FB522BE2F19900667FB4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		51C3FB542BE2F19B00667FB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51C3FB572BE2F19B00667FB4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51C3FB622BE2FA3000667FB4 /* CardPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPrincipal.swift; sourceTree = "<group>"; };
 		51C3FB682BE43CBE00667FB4 /* Scrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrapper.swift; sourceTree = "<group>"; };
 		51C454242BE4810A00B4D13B /* DolarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolarModel.swift; sourceTree = "<group>"; };
 		51C454272BE481CE00B4D13B /* DolarEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolarEnum.swift; sourceTree = "<group>"; };
-		51C4542A2BE4838500B4D13B /* DolarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolarViewModel.swift; sourceTree = "<group>"; };
 		51C4542C2BE5723A00B4D13B /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
 		51C4542E2BE5794F00B4D13B /* DolarCardLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolarCardLoading.swift; sourceTree = "<group>"; };
-		51C454302BE57F1400B4D13B /* GeneralFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFunctions.swift; sourceTree = "<group>"; };
 		51E506BF2BEC231F0002FFC6 /* WhiteCardBackGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCardBackGround.swift; sourceTree = "<group>"; };
 		51E506C12BEC23490002FFC6 /* ColorBackGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBackGround.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		17823A1E2BF5A18F00EE4714 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17823A1F2BF5A18F00EE4714 /* SwiftSoup in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51C3FB4A2BE2F19900667FB4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -74,6 +107,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17823A282BF5A45100EE4714 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				17823A292BF5A46E00EE4714 /* View */,
+				17823A2A2BF5A49600EE4714 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		17823A292BF5A46E00EE4714 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51C3FB522BE2F19900667FB4 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		17823A2A2BF5A49600EE4714 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				17823A2B2BF5A50500EE4714 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		17823A2D2BF5A5A900EE4714 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				17823A282BF5A45100EE4714 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		17823A2E2BF5A5B500EE4714 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				17823A312BF5BFCE00EE4714 /* Extensions */,
+				51C454232BE480F700B4D13B /* Models */,
+				51C3FB5E2BE2F9DF00667FB4 /* CustomViews */,
+				51C3FB542BE2F19B00667FB4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		17823A2F2BF5A5E100EE4714 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				51C3FB502BE2F19900667FB4 /* DolargApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		17823A312BF5BFCE00EE4714 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				17823A332BF5BFEB00EE4714 /* StringExtension.swift */,
+				17823A372BF5C26A00EE4714 /* IntExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		17823A362BF5C00200EE4714 /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				5158CDFF2BE6ABF200C963EA /* ChartView.swift */,
+			);
+			path = ChartView;
+			sourceTree = "<group>";
+		};
 		51C3FB442BE2F19900667FB4 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				51C3FB4D2BE2F19900667FB4 /* Dolarg.app */,
+				17823A272BF5A18F00EE4714 /* Dolarg_GMC.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,12 +196,10 @@
 		51C3FB4F2BE2F19900667FB4 /* Dolarg */ = {
 			isa = PBXGroup;
 			children = (
-				51C3FB502BE2F19900667FB4 /* DolargApp.swift */,
-				51C3FB542BE2F19B00667FB4 /* Assets.xcassets */,
 				51C3FB672BE43CB000667FB4 /* Scrapper */,
-				51C3FB5E2BE2F9DF00667FB4 /* VIews */,
-				51C454232BE480F700B4D13B /* Model */,
-				51C454292BE4836100B4D13B /* ViewModels */,
+				17823A2E2BF5A5B500EE4714 /* Resources */,
+				17823A2D2BF5A5A900EE4714 /* Modules */,
+				17823A2F2BF5A5E100EE4714 /* App */,
 				51C3FB562BE2F19B00667FB4 /* Preview Content */,
 			);
 			path = Dolarg;
@@ -112,21 +213,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		51C3FB5E2BE2F9DF00667FB4 /* VIews */ = {
+		51C3FB5E2BE2F9DF00667FB4 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				51C3FB522BE2F19900667FB4 /* Home.swift */,
-				5158CDFF2BE6ABF200C963EA /* ChartView.swift */,
+				17823A362BF5C00200EE4714 /* ChartView */,
 				51C3FB5F2BE2F9E400667FB4 /* Components */,
 			);
-			path = VIews;
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		51C3FB5F2BE2F9E400667FB4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				51E506BE2BEC23100002FFC6 /* BackGround */,
-				51C3FB612BE2FA2100667FB4 /* Buttons */,
 				51C3FB602BE2FA1A00667FB4 /* Cards */,
 				5103F7B12BF57863009B11ED /* LaunchScreen.storyboard */,
 			);
@@ -144,13 +243,6 @@
 			path = Cards;
 			sourceTree = "<group>";
 		};
-		51C3FB612BE2FA2100667FB4 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Buttons;
-			sourceTree = "<group>";
-		};
 		51C3FB672BE43CB000667FB4 /* Scrapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,7 +255,7 @@
 			path = Scrapper;
 			sourceTree = "<group>";
 		};
-		51C454232BE480F700B4D13B /* Model */ = {
+		51C454232BE480F700B4D13B /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				51C454242BE4810A00B4D13B /* DolarModel.swift */,
@@ -171,17 +263,7 @@
 				5158CE052BE9825D00C963EA /* DolarChartModel.swift */,
 				5103F7A52BF2D765009B11ED /* DolarLocalModel.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		51C454292BE4836100B4D13B /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				51C4542A2BE4838500B4D13B /* DolarViewModel.swift */,
-				5103F7AD2BF45502009B11ED /* HistoricoViewModel.swift */,
-				51C454302BE57F1400B4D13B /* GeneralFunctions.swift */,
-			);
-			path = ViewModels;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		51E506BE2BEC23100002FFC6 /* BackGround */ = {
@@ -196,6 +278,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		17823A062BF5A18F00EE4714 /* Dolarg_GMC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17823A242BF5A18F00EE4714 /* Build configuration list for PBXNativeTarget "Dolarg_GMC" */;
+			buildPhases = (
+				17823A092BF5A18F00EE4714 /* Sources */,
+				17823A1E2BF5A18F00EE4714 /* Frameworks */,
+				17823A202BF5A18F00EE4714 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dolarg_GMC;
+			packageProductDependencies = (
+				17823A072BF5A18F00EE4714 /* SwiftSoup */,
+			);
+			productName = Dolarg;
+			productReference = 17823A272BF5A18F00EE4714 /* Dolarg_GMC.app */;
+			productType = "com.apple.product-type.application";
+		};
 		51C3FB4C2BE2F19900667FB4 /* Dolarg */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51C3FB5B2BE2F19B00667FB4 /* Build configuration list for PBXNativeTarget "Dolarg" */;
@@ -248,11 +350,22 @@
 			projectRoot = "";
 			targets = (
 				51C3FB4C2BE2F19900667FB4 /* Dolarg */,
+				17823A062BF5A18F00EE4714 /* Dolarg_GMC */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		17823A202BF5A18F00EE4714 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17823A212BF5A18F00EE4714 /* Preview Assets.xcassets in Resources */,
+				17823A222BF5A18F00EE4714 /* data.json in Resources */,
+				17823A232BF5A18F00EE4714 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51C3FB4B2BE2F19900667FB4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,29 +380,56 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		17823A092BF5A18F00EE4714 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17823A0A2BF5A18F00EE4714 /* HistoricoModel.swift in Sources */,
+				17823A0B2BF5A18F00EE4714 /* CardPrincipal.swift in Sources */,
+				17823A0D2BF5A18F00EE4714 /* Scrapper.swift in Sources */,
+				17823A0E2BF5A18F00EE4714 /* HomeView.swift in Sources */,
+				17823A0F2BF5A18F00EE4714 /* DolarChartModel.swift in Sources */,
+				17823A112BF5A18F00EE4714 /* DolarCardLoading.swift in Sources */,
+				17823A122BF5A18F00EE4714 /* ScrapHistorico.swift in Sources */,
+				17823A132BF5A18F00EE4714 /* DolarEnum.swift in Sources */,
+				17823A142BF5A18F00EE4714 /* WhiteCardBackGround.swift in Sources */,
+				17823A152BF5A18F00EE4714 /* ChartAnimationStroke.swift in Sources */,
+				17823A162BF5A18F00EE4714 /* DolarLocalModel.swift in Sources */,
+				17823A182BF5A18F00EE4714 /* ChartView.swift in Sources */,
+				17823A192BF5A18F00EE4714 /* NetworkErrors.swift in Sources */,
+				17823A392BF5C26A00EE4714 /* IntExtension.swift in Sources */,
+				17823A302BF5A6A100EE4714 /* HomeViewModel.swift in Sources */,
+				17823A1A2BF5A18F00EE4714 /* DolarModel.swift in Sources */,
+				17823A1B2BF5A18F00EE4714 /* DolargApp.swift in Sources */,
+				17823A1C2BF5A18F00EE4714 /* ChartLoading.swift in Sources */,
+				17823A352BF5BFEB00EE4714 /* StringExtension.swift in Sources */,
+				17823A1D2BF5A18F00EE4714 /* ColorBackGround.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51C3FB492BE2F19900667FB4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5158CE022BE6B9D100C963EA /* HistoricoModel.swift in Sources */,
 				51C3FB632BE2FA3000667FB4 /* CardPrincipal.swift in Sources */,
-				5103F7AE2BF45502009B11ED /* HistoricoViewModel.swift in Sources */,
 				51C3FB692BE43CBE00667FB4 /* Scrapper.swift in Sources */,
-				51C3FB532BE2F19900667FB4 /* Home.swift in Sources */,
+				51C3FB532BE2F19900667FB4 /* HomeView.swift in Sources */,
 				5158CE062BE9825D00C963EA /* DolarChartModel.swift in Sources */,
-				51C4542B2BE4838500B4D13B /* DolarViewModel.swift in Sources */,
 				51C4542F2BE5794F00B4D13B /* DolarCardLoading.swift in Sources */,
 				5103F7B02BF4587F009B11ED /* ScrapHistorico.swift in Sources */,
 				51C454282BE481CE00B4D13B /* DolarEnum.swift in Sources */,
 				51E506C02BEC231F0002FFC6 /* WhiteCardBackGround.swift in Sources */,
 				5199EE402BF018A300B5BABD /* ChartAnimationStroke.swift in Sources */,
 				5103F7A62BF2D765009B11ED /* DolarLocalModel.swift in Sources */,
-				51C454312BE57F1400B4D13B /* GeneralFunctions.swift in Sources */,
 				5158CE002BE6ABF200C963EA /* ChartView.swift in Sources */,
 				51C4542D2BE5723A00B4D13B /* NetworkErrors.swift in Sources */,
+				17823A382BF5C26A00EE4714 /* IntExtension.swift in Sources */,
+				17823A2C2BF5A50500EE4714 /* HomeViewModel.swift in Sources */,
 				51C454252BE4810A00B4D13B /* DolarModel.swift in Sources */,
 				51C3FB512BE2F19900667FB4 /* DolargApp.swift in Sources */,
 				519CEB9C2BEAFAD9005144E7 /* ChartLoading.swift in Sources */,
+				17823A342BF5BFEB00EE4714 /* StringExtension.swift in Sources */,
 				51E506C22BEC23490002FFC6 /* ColorBackGround.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +437,74 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		17823A252BF5A18F00EE4714 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Dolarg/Preview Content\"";
+				DEVELOPMENT_TEAM = 6U87AEAZZ8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gastonfoncea.Dolarg.gmc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17823A262BF5A18F00EE4714 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Dolarg/Preview Content\"";
+				DEVELOPMENT_TEAM = 6U87AEAZZ8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gastonfoncea.Dolarg.gmc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		51C3FB592BE2F19B00667FB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -479,6 +687,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		17823A242BF5A18F00EE4714 /* Build configuration list for PBXNativeTarget "Dolarg_GMC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17823A252BF5A18F00EE4714 /* Debug */,
+				17823A262BF5A18F00EE4714 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		51C3FB482BE2F19900667FB4 /* Build configuration list for PBXProject "Dolarg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -500,17 +717,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		17823A082BF5A18F00EE4714 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.0;
+			};
+		};
 		51C3FB642BE42F5100667FB4 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.7.2;
+				minimumVersion = 2.7.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		17823A072BF5A18F00EE4714 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17823A082BF5A18F00EE4714 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		51C3FB652BE42F5100667FB4 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 51C3FB642BE42F5100667FB4 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
