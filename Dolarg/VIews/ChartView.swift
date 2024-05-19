@@ -13,7 +13,7 @@ struct ChartView: View {
     
     var genfunc = GeneralFunctions()
     @State var showAnimation = true
-    var dolarHistoricoData: HistoricoModel
+    @State var dolarHistoricoData: HistoricoModel
     
     private let gradientColors = [
         Color.white,
@@ -111,6 +111,6 @@ struct ChartView: View {
     }
 }
 
-#Preview {
-    ChartView(dolarHistoricoData: HistoricoModel.init(arrayFechas: ["","","","","","","","","","","",""], arrayMontos: ["","","","","","","","","","","",""]))
-}
+//#Preview {
+//    ChartView(dolarHistoricoData: HistoricoModel.init(arrayFechas: ["","","","","","","","","","","",""], arrayMontos: ["","","","","","","","","","","",""]))
+//}
