@@ -41,7 +41,7 @@ struct CardPrincipal: View {
                         .bold()
                         .foregroundStyle(Color.white)
 
-                    Text("Ult Vez \(horaActualizacion.DateTimeActualizado()) hs")
+                    Text("\(horaActualizacion.DateTimeActualizado())")
                         .font(.footnote)
                         .foregroundStyle(Color.accentColor)
 

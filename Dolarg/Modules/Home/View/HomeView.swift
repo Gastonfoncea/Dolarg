@@ -41,6 +41,12 @@ struct HomeView: View {
                         case .loading:
                             ChartLoading()
                                 .padding(.bottom)
+                            DolarCardLoading()
+                                .padding(.top)
+                                .padding(.top)
+                            DolarCardLoading()
+                            DolarCardLoading()
+                            DolarCardLoading()
                         case .loaded(let viewData):
                             createMainView(viewData: viewData)
                                 .padding(.bottom)
