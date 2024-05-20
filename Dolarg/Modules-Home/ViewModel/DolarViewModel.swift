@@ -11,7 +11,7 @@ import Observation
 
 class DolarViewModel: ObservableObject {
     
-
+    
 
     @Published var dolar: DolarModel?
     @Published var isLoading = true
