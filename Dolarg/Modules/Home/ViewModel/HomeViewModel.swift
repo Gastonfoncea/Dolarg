@@ -14,22 +14,26 @@ import Foundation
  - HomeViewModel.swift
  */
 
+//enumeramos los estados que puede estar el viewModel
 @MainActor enum HomeViewState {
     case loading
     case loaded(HomeViewData)
     case error
 }
 
+//Los datos que puede tener el viewModel
 struct HomeViewData {
     var dolar: DolarModel?
     var historicoDolar: HistoricoModel?
 }
 
+//protocolo para obtener el estado en el que esta el viewMOdel. Este es el objecto que llamaraemos ya que es el ObservableObject
 protocol HomeViewModelProtocol: ObservableObject {
     var state: HomeViewState { get }
     func refreshAll()
 }
 
+//se puede instanciar el homeViewModel por que cumple con el protocolo de arriba y ers ObservableObject, por eso no hace falta declararlo aca
 class HomeViewModel {
     @Published private(set) var state: HomeViewState
     

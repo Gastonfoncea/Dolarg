@@ -68,6 +68,7 @@ struct HomeView: View {
 }
 
 private extension HomeView {
+    
     func createMainView(viewData: HomeViewData) -> some View {
         guard let historicoDolar = viewData.historicoDolar else { return AnyView(Text("No Data")) }
         return AnyView(VStack(alignment: .leading, spacing: 10, content: {
@@ -85,6 +86,7 @@ private extension HomeView {
             }
         }))
     }
+    
 }
 
 #Preview {
